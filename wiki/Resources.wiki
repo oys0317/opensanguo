@@ -25,3 +25,9 @@
   * [http://glest.org/en/index.php Glest]
   * [http://www.wesnoth.org/ The Battle for Wesnoth]
   * [http://freeciv.wikia.com/wiki/Main_Page FreeCiv]
+
+== IDEs ==
+
+  * [http://www.codeblocks.org/ Code::Blocks]
+  * [http://www.kdevelop.org/ KDevelop]
+  * [http://projects.gnome.org/anjuta/index.shtml Anjuta]
