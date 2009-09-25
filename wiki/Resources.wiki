@@ -18,6 +18,7 @@
 == Game Related Sites ==
 
   * [http://www.devmaster.net/engines/ DevMaster]
+  * [http://www.linuxgames.com/ Linux Games]
 
 == Open Source Games ==
 
@@ -25,7 +26,9 @@
   * [http://glest.org/en/index.php Glest]
   * [http://www.wesnoth.org/ The Battle for Wesnoth]
   * [http://freeciv.wikia.com/wiki/Main_Page FreeCiv]
-
+  * [http://blog.taragana.com/index.php/archive/top-10-free-linux-games-in-2009/ Top 10 Free Linux Games in 2009]
+  * [http://sathyasays.com/2008/01/12/25-top-3d-linux-games/ 25 Top 3D Linux Games]
+  
 == IDEs ==
 
   * [http://www.codeblocks.org/ Code::Blocks]
