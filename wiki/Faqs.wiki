@@ -1,0 +1,32 @@
+#summary Frequently Asked Questions.
+#labels Phase-Implementation
+<wiki:toc max_depth="3" />
+
+== How to build Wesnoth from source ==
+
+Download wesnoth from [fedora update site http://www.ua.kernel.org/pub/mirrors/fedora/updates/11/SRPMS/] and run
+
+{{{
+rpm -ivh wesnoth-1.6.4-1.fc11.src.rpm
+}}}
+
+The source should be installed on rpmbuild subdirectory in home directory. To build Wesnoth from source, you need to install couple dependencies.
+
+{{{
+yum install SDL_image SDL_image-devel SDL_net SDL_net-devel SDL_sound SDL_sound-devel SDL_ttf SDL_ttf-devel SDL_gfx SDL_gfx-devel
+}}} 
+
+Then go to rpmbuild/SOURCES/ and unpack wesnoth-1.6.4.tar.bz2.
+
+{{{
+tar jxvf wesnoth-1.6.4.tar.bz2 
+}}}
+
+Go to the wesnoth-1.6.4 source directory and run the following commands to build Wesnoth:
+
+{{{
+cmake .
+make
+}}}
+
+If you want to rebuild the RPM from source, please read [http://hacktux.com/fedora/source/rpm the guide].
