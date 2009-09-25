@@ -4,7 +4,7 @@
 
 == How to build Wesnoth from source ==
 
-Download wesnoth from [fedora update site http://www.ua.kernel.org/pub/mirrors/fedora/updates/11/SRPMS/] and run
+Download wesnoth from [http://www.ua.kernel.org/pub/mirrors/fedora/updates/11/SRPMS/ fedora update site] and run
 
 {{{
 rpm -ivh wesnoth-1.6.4-1.fc11.src.rpm
