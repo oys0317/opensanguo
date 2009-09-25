@@ -1,0 +1,20 @@
+#summary Resources.
+#labels Phase-Support
+
+== Open Source Game/3D Engines ==
+
+  * [http://www.ogre3d.org/wiki/index.php/Main_Page OGRE]
+  * [http://irrlicht.sourceforge.net/ Irrlicht]
+  * [http://www.crystalspace3d.org/main/Main_Page Crystal Space]
+  * [http://www.panda3d.org/ Panda3D]
+
+== Game Related Sites ==
+
+  * [http://www.devmaster.net/engines/ DevMaster]
+
+== Open Source Games ==
+
+  * [http://wz2100.net/ Warzone 2100]
+  * [http://glest.org/en/index.php Glest]
+  * [http://www.wesnoth.org/ The Battle for Wesnoth]
+  * [http://freeciv.wikia.com/wiki/Main_Page FreeCiv]
