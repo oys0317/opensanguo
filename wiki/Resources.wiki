@@ -7,8 +7,7 @@
   * [http://www.cmake.org/ CMake]
   * [http://www.cppreference.com/wiki/stl/start C++ Standard Template Library]
   * [http://gcc.gnu.org/ GCC]
-  * [http://www.stack.nl/~dimitri/doxygen/index.html  	
-Doxygen: Source code documentation generator tool]
+  * [http://www.stack.nl/~dimitri/doxygen/index.html Doxygen: Source code documentation generator tool]
 
 == Open Source Game/3D Engines ==
 
