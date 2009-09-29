@@ -9,6 +9,10 @@
   * [http://gcc.gnu.org/ GCC]
   * [http://www.stack.nl/~dimitri/doxygen/index.html Doxygen: Source code documentation generator tool]
 
+== GUI Libraries ==
+
+  * [http://gpwiki.org/index.php/C:SDL_tutorials SDL Tutorials]
+
 == Open Source Game/3D Engines ==
 
   * [http://www.ogre3d.org/wiki/index.php/Main_Page OGRE]
