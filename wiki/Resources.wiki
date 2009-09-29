@@ -38,6 +38,7 @@
   
 == IDEs ==
 
+  * [http://www.eclipse.org/downloads/ Eclipse for C/C++]
   * [http://www.codeblocks.org/ Code::Blocks]
   * [http://www.kdevelop.org/ KDevelop]
   * [http://projects.gnome.org/anjuta/index.shtml Anjuta]
