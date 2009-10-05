@@ -43,3 +43,8 @@
   * [http://www.codeblocks.org/ Code::Blocks]
   * [http://www.kdevelop.org/ KDevelop]
   * [http://projects.gnome.org/anjuta/index.shtml Anjuta]
+
+== Books ==
+
+  * Pro OGRE 3D Programming, 2006
+  * Focus On SDL: The Premier Press Game Development Series, 2002
