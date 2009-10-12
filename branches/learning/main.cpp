@@ -8,6 +8,8 @@
 #else
 #include <SDL.h>
 #endif
+const int SCREEN_WIDTH=640;
+const int SCREEN_HEIGHT=480;
 
 int main ( int argc,char** argv )
 {
@@ -21,10 +23,12 @@ int main ( int argc,char** argv )
     // make sure SDL cleans up before exit
     atexit(SDL_Quit);
 
+    // set the title bar
+    SDL_WM_SetCaption("SDL Test", "SDL Test");
 
     // create a new window
-    SDL_Surface* screen = SDL_SetVideoMode(640,480,16,
-                                           SDL_HWSURFACE|SDL_DOUBLEBUF);
+    SDL_Surface* screen = SDL_SetVideoMode(SCREEN_WIDTH,SCREEN_HEIGHT,16,
+                                           SDL_HWSURFACE|SDL_DOUBLEBUF|SDL_RESIZABLE);
     if ( !screen )
     {
         printf("Unable to set 640x480 video: %s\n",SDL_GetError());
@@ -54,10 +58,21 @@ int main ( int argc,char** argv )
         return 1;
     }
 
+    // convert bitmap to display format
+    SDL_Surface* bg = SDL_DisplayFormat(bmp);
+    // free the temp surface
+//    SDL_FreeSurface(bmp);
+    SDL_Surface* pSurface = SDL_CreateRGBSurface(SDL_HWSURFACE, 100, 100, 16, 0xF800, 0x07E, 0x1F, 0x00);
+    SDL_Surface* conv = SDL_DisplayFormat(pSurface);
+
     // centre the bitmap on screen
     SDL_Rect dstrect;
     dstrect.x = (screen->w - bmp->w) / 2;
     dstrect.y = (screen->h - bmp->h) / 2;
+
+    SDL_Rect g_Rect;
+    Uint8 g_Red, g_Green, g_Blue;
+    Uint32 g_Color;
 
     // program main loop
     bool done = false;
@@ -67,6 +82,28 @@ int main ( int argc,char** argv )
         SDL_Event event;
         while (SDL_PollEvent(&event))
         {
+            g_Red=rand()%256;
+            g_Green=rand()%256;
+            g_Blue=rand()%256;
+            g_Color=SDL_MapRGB(bmp->format,g_Red,g_Green,g_Blue);
+            g_Rect.x=rand()%SCREEN_WIDTH;
+            g_Rect.y=rand()%SCREEN_HEIGHT;
+            g_Rect.w=rand()%(SCREEN_WIDTH-g_Rect.x);
+            g_Rect.h=rand()%(SCREEN_HEIGHT-g_Rect.y);
+            SDL_FillRect(bmp,&g_Rect,g_Color);
+            SDL_UpdateRect(bmp,0,0,0,0);
+
+            char* pData;
+            //grab the frame buffer
+            pData=(char*)bmp->pixels;
+
+            //vertical offset
+            pData+=(g_Rect.y*bmp->pitch);
+            //horizontal offset
+            pData+=(g_Rect.x*bmp->format->BytesPerPixel);
+            //copy color
+            memcpy(pData,&g_Color,bmp->format->BytesPerPixel);
+
             // check for messages
             switch (event.type)
             {
