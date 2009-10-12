@@ -14,7 +14,6 @@
 
   * [http://www.libsdl.org/ Simple DirectMedia Layer (SDL)]
   * [http://gpwiki.org/index.php/C:SDL_tutorials SDL Tutorials]
-  * [http://www.ogre3d.org/wiki/index.php/Using_SDL_Input Using SDL Input fo an OGRE project]
 
 == Open Source Game/3D Engines ==
 
@@ -28,7 +27,6 @@
   * [http://gpwiki.org/ Game Programming Wiki]
   * [http://www.devmaster.net/engines/ DevMaster]
   * [http://www.linuxgames.com/ Linux Games]
-  * [http://blog.csdn.net/liu3xing3long/archive/2009/02/10/3872350.aspx What you need for OGRE]
 
 == Open Source Games ==
 
@@ -45,6 +43,11 @@
   * [http://www.codeblocks.org/ Code::Blocks]
   * [http://www.kdevelop.org/ KDevelop]
   * [http://projects.gnome.org/anjuta/index.shtml Anjuta]
+
+== Articles ==
+
+  * [http://www.ogre3d.org/wiki/index.php/Using_SDL_Input Using SDL Input fo an OGRE project]
+  * [http://blog.csdn.net/liu3xing3long/archive/2009/02/10/3872350.aspx What you need for OGRE]
 
 == Books ==
 
