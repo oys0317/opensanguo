@@ -44,10 +44,15 @@
   * [http://www.kdevelop.org/ KDevelop]
   * [http://projects.gnome.org/anjuta/index.shtml Anjuta]
 
+== Testing ==
+
+  * [http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks List of unit testing frameworks]
+
 == Articles ==
 
   * [http://www.ogre3d.org/wiki/index.php/Using_SDL_Input Using SDL Input fo an OGRE project]
   * [http://blog.csdn.net/liu3xing3long/archive/2009/02/10/3872350.aspx What you need for OGRE]
+  * [http://gamesfromwithin.com/exploring-the-c-unit-testing-framework-jungle Exploring the C++ Unit Testing Framework Jungle]
 
 == Books ==
 
