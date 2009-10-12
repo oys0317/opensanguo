@@ -51,6 +51,7 @@
 == Articles ==
 
   * [http://www.ogre3d.org/wiki/index.php/Using_SDL_Input Using SDL Input fo an OGRE project]
+  * [http://gamedevgeek.com/tutorials/getting-started-with-sdl/ Getting Started With SDL]
   * [http://blog.csdn.net/liu3xing3long/archive/2009/02/10/3872350.aspx What you need for OGRE]
   * [http://gamesfromwithin.com/exploring-the-c-unit-testing-framework-jungle Exploring the C++ Unit Testing Framework Jungle]
 
