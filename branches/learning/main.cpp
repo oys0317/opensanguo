@@ -74,6 +74,17 @@ int main ( int argc,char** argv )
     Uint8 g_Red, g_Green, g_Blue;
     Uint32 g_Color;
 
+    //Transparency
+    SDL_SetColorKey(bmp,SDL_SRCCOLORKEY|SDL_RLEACCEL,0);
+
+    //Clip output area
+    SDL_Rect g_ClipRect;
+    g_ClipRect.x=32;
+    g_ClipRect.y=32;
+    g_ClipRect.w=SCREEN_WIDTH-64;
+    g_ClipRect.h=SCREEN_HEIGHT-64;
+    SDL_SetClipRect(bmp,&g_ClipRect);
+
     // program main loop
     bool done = false;
     while (!done)
@@ -128,7 +139,7 @@ int main ( int argc,char** argv )
         // clear screen
         SDL_FillRect(screen,0,SDL_MapRGB(screen->format,0,0,0));
 
-        // draw bitmap
+        // draw bitmap, 0 --> full window update
         SDL_BlitSurface(bmp,0,screen,&dstrect);
 
         // DRAWING ENDS HERE
@@ -137,7 +148,7 @@ int main ( int argc,char** argv )
         SDL_Flip(screen);
     } // end main loop
 
-    // free loaded bitmap
+    // free loaded bitmap -> double buffering
     SDL_FreeSurface(bmp);
 
     // all is well ;)
