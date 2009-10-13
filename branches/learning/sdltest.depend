@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1255383254 source:/opt/workspace/3d/sdltest/main.cpp
+1255460970 source:/opt/workspace/3d/sdltest/main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -198,4 +198,10 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1255461619 source:/opt/workspace/3d/sdltest/sdlaudio.cpp
+	<cstdlib>
+	<stdlib.h>
+	<SDL/SDL.h>
+	<SDL.h>
 
