@@ -80,7 +80,9 @@ int FOSDL_ThreadFunction(void* data)
 {
     //grab thread number
 //    int threadnumber = (int)data;
-    int threadnumber = 3;
+//    int threadnumber = 3;
+
+    uintptr_t threadnumber = (uintptr_t)data;
 
     //wait for semaphore
     fprintf(stdout,"Thread %d: Initialized.\n",threadnumber);
