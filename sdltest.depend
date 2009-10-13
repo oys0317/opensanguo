@@ -199,9 +199,25 @@
 	"begin_code.h"
 	"close_code.h"
 
-1255461619 source:/opt/workspace/3d/sdltest/sdlaudio.cpp
+1255468644 source:/opt/workspace/3d/sdltest/sdlaudio.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
 	<SDL.h>
+
+1255469042 source:/opt/workspace/3d/sdltest/sdlnet.cpp
+	<cstdlib>
+	<stdlib.h>
+	<SDL/SDL.h>
+	<SDL/SDL_net.h>
+	<SDL.h>
+	<SDL_net.h>
+	<stdlib.h>
+
+1235431635 /usr/include/SDL/SDL_net.h
+	"SDL.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
 

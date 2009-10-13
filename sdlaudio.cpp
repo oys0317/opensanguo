@@ -21,7 +21,7 @@ int FOSDL_ThreadFunction(void* data);
 SDL_sem* g_pSemaphore;
 SDL_Thread* g_pThread[3];
 
-int main(int argc, char* argv[])
+int main2(int argc, char* argv[])
 {
     SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO);
     atexit(SDL_Quit);
