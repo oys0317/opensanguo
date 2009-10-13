@@ -11,7 +11,7 @@
 const int SCREEN_WIDTH=640;
 const int SCREEN_HEIGHT=480;
 
-int main ( int argc,char** argv )
+int main1 ( int argc,char** argv )
 {
     // initialize SDL video
     if ( SDL_Init( SDL_INIT_VIDEO ) < 0 )
