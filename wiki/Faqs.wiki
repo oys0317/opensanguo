@@ -30,3 +30,9 @@ make
 }}}
 
 If you want to rebuild the RPM from source, please read [http://hacktux.com/fedora/source/rpm the guide].
+
+== How to Generate CodeBlocks Project Files from Wesnoth Source ==
+
+{{{
+cmake -G "CodeBlocks - Unix Makefiles"  .
+}}}
