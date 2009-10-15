@@ -57,6 +57,7 @@
   * [http://blog.csdn.net/liu3xing3long/archive/2009/02/10/3872350.aspx What you need for OGRE]
   * [http://gamesfromwithin.com/exploring-the-c-unit-testing-framework-jungle Exploring the C++ Unit Testing Framework Jungle]
   * [http://www.cmake.org/Wiki/CMake_Generator_Specific_Information CMake Generator Specific Information]
+  * [http://www.ogre3d.org/wiki/index.php/Getting_Started_With_CMake Getting started with CMake] 
 
 == Books ==
 
