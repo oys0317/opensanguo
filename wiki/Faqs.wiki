@@ -33,6 +33,52 @@ If you want to rebuild the RPM from source, please read [http://hacktux.com/fedo
 
 == How to Generate CodeBlocks Project Files from Wesnoth Source ==
 
+cmake manual:
+
+{{{
+NAME
+         cmake - Cross-Platform Makefile Generator.
+
+USAGE
+         cmake [options] <path-to-source>
+         cmake [options] <path-to-existing-build>
+OPTIONS
+       -C <initial-cache>
+              Pre-load a script to populate the cache.
+       -D <var>:<type>=<value>
+              Create a cmake cache entry.
+       -U <globbing_expr>
+              Remove matching entries from CMake cache.
+       -G <generator-name>
+              Specify a makefile generator.
+       -Wno-dev
+              Suppress developer warnings.
+       -Wdev  Enable developer warnings.
+       -E     CMake command mode.
+       -i     Run in wizard mode.
+       -L[A][H]
+              List non-advanced cached variables.
+       -N     View mode only.
+       -P <file>
+              Process script mode.
+GENERATORS
+       The following generators are available on this platform:
+
+       Unix Makefiles
+              Generates standard UNIX makefiles.
+       CodeBlocks - Unix Makefiles
+              Generates CodeBlocks project files.
+       Eclipse CDT4 - Unix Makefiles
+              Generates Eclipse CDT 4.0 project files.
+       KDevelop3
+              Generates KDevelop 3 project files.
+       KDevelop3 - Unix Makefiles
+              Generates KDevelop 3 project files.
+
+}}}
+
+For example, the following command creates the CodeBlocks project files for Linux.
+
 {{{
 cmake -G "CodeBlocks - Unix Makefiles"  .
 }}}
