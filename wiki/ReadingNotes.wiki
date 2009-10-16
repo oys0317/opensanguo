@@ -1,0 +1,14 @@
+#summary Reading Notes.
+#labels Phase-Implementation
+<wiki:toc max_depth="3" />
+
+= AI =
+
+== The movement of an autonomous agent ==
+
+The movement of an autonomous agent can be broken down into three layers:
+  * Action Selection: This is the part of the agent's behavior responsible for choosing its goals and deciding what plan to follow. It is the part that says "go here" and "do A, B, and then C."
+  * This layer is responsible for calculating the desired trajectories required to satisfy the goals and plans set by the action selection layer. 
+  * Locomotion: The bottom layer, locomotion, represents the more mechanical aspects of an agent's movement. It is the how of traveling from A to B.
+
+
