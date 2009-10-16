@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Steering" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="./Debug/Steering" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+				</Compiler>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="./Release/Steering" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-W" />
+					<Add option="-O2" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="GameWorld.cpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="SteeringBehaviors.cpp" />
+		<Unit filename="Vehicle.cpp" />
+		<Unit filename="BaseGameEntity.h" />
+		<Unit filename="../Common/misc/CellSpacePartition.h" />
+		<Unit filename="constants.h" />
+		<Unit filename="GameWorld.h" />
+		<Unit filename="MovingEntity.h" />
+		<Unit filename="SteeringBehaviors.h" />
+		<Unit filename="Vehicle.h" />
+		<Unit filename="params.ini" />
+		<Unit filename="resource.h" />
+		<Unit filename="Script1.rc" />
+		<Unit filename="../Common/2D/C2DMatrix.h" />
+		<Unit filename="../Common/misc/Cgdi.cpp" />
+		<Unit filename="../Common/misc/Cgdi.h" />
+		<Unit filename="EntityFunctionTemplates.h" />
+		<Unit filename="../Common/2D/geometry.h" />
+		<Unit filename="../Common/misc/iniFileLoaderBase.cpp" />
+		<Unit filename="../Common/misc/iniFileLoaderBase.h" />
+		<Unit filename="../Common/2D/InvertedAABBox2D.h" />
+		<Unit filename="Obstacle.cpp" />
+		<Unit filename="Obstacle.h" />
+		<Unit filename="ParamLoader.cpp" />
+		<Unit filename="ParamLoader.h" />
+		<Unit filename="Path.cpp" />
+		<Unit filename="Path.h" />
+		<Unit filename="../Common/Time/PrecisionTimer.cpp" />
+		<Unit filename="../Common/Time/PrecisionTimer.h" />
+		<Unit filename="../Common/misc/Smoother.h" />
+		<Unit filename="../Common/misc/Stream_Utility_Functions.h" />
+		<Unit filename="../Common/2D/Transformations.h" />
+		<Unit filename="../Common/misc/utils.h" />
+		<Unit filename="../Common/2D/Vector2d.cpp" />
+		<Unit filename="../Common/2D/Vector2D.h" />
+		<Unit filename="../Common/2D/Wall2D.h" />
+		<Unit filename="../Common/misc/WindowUtils.cpp" />
+		<Unit filename="../Common/misc/WindowUtils.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
