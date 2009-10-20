@@ -12,7 +12,7 @@
 
 == Script Languages ==
 
-  * [http://www.lua.org/ official Lua web site]
+  * [http://www.lua.org/ Official Lua web site]
   * [http://lua-users.org/wiki/ lua-users wiki]
 
 == GUI Libraries ==
