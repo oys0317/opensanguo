@@ -27,6 +27,13 @@
   * [http://www.crystalspace3d.org/main/Main_Page Crystal Space]
   * [http://www.panda3d.org/ Panda3D]
 
+== Modeling ==
+  
+  * [http://www4.discreet.com/3dsmax 3ds Max] 
+  * [http://www.alias.com/eng/products-services/maya/index.shtml Maya] 
+  * [http://www.blender.org/ Blender]
+  * [http://www.wings3d.com/ Wings 3D]
+
 == Game Related Sites ==
 
   * [http://gpwiki.org/ Game Programming Wiki]
