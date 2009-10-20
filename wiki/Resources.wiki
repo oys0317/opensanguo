@@ -10,6 +10,10 @@
   * [http://www.stack.nl/~dimitri/doxygen/index.html Doxygen: Source code documentation generator tool]
   * [http://en.wikipedia.org/wiki/Dependency_injection Dependency injection Frameworks including C++]
 
+== Script Languages ==
+
+  * [http://lua-users.org/wiki/ lua-users wiki]
+
 == GUI Libraries ==
 
   * [http://www.libsdl.org/ Simple DirectMedia Layer (SDL)]
