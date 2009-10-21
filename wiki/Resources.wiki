@@ -1,4 +1,4 @@
-#summary Resources.
+#summary Resources游戏编程资源.
 #labels Phase-Support
 
 == C/C++ ==
