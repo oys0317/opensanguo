@@ -77,3 +77,4 @@
   * Pro OGRE 3D Programming, 2006
   * Focus On SDL: The Premier Press Game Development Series, 2002
   * Programming Game AI by Example, 2004
+  * Beginning Lua Programming, 2007 
