@@ -82,3 +82,9 @@ For example, the following command creates the CodeBlocks project files for Linu
 {{{
 cmake -G "CodeBlocks - Unix Makefiles"  .
 }}}
+
+== How to Install Blender 3D Modeling Tool in Linux ==
+
+{{{
+yum install blender blenderplayer -y
+}}} 
