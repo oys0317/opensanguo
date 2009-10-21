@@ -1,4 +1,4 @@
-#summary Reading Notes.
+#summary Reading Notes读书笔记.
 #labels Phase-Implementation
 <wiki:toc max_depth="3" />
 
@@ -15,3 +15,9 @@ The movement of an autonomous agent can be broken down into three layers:
 
 This type of AI is used in all sorts of computer games. You will often find tiered AI in real-time strategy (RTS) games where the enemy AI is commonly implemented in several layers
 at, say, the unit, troop, and commander levels.
+
+== Navigation Graph ==
+
+  * _Points of Visibility_: A points of visibility (POV) navigation graph is created by placing graph nodes, usually by hand, at important points in the environment such that each graph node has line of sight to at least one other. Positioned carefully, the graph nodes will make a graph connecting all the important areas in the world geometry.
+  * _Expanded Geometry_: If a game environment is constructed from polygons it's possible to use the information present in those shapes to automatically create a POV graph, which, for large maps can be a real time-saver. This is achieved by first expanding the polygons by an amount proportional to the bounding radius of the game agents.
+  * _NavMesh_: One approach growing in popularity with game developers is to use a network of convex polygons, called a navmesh, to describe the walkable areas of a game environment. A convex polygon has the valuable property that it allows unobstructed travel from any point in the polygon to any other. This is useful because it enables an environment to be represented using a graph where each node represents a convex space (instead of a point).
