@@ -9,6 +9,7 @@
   * [http://gcc.gnu.org/ GCC]
   * [http://www.stack.nl/~dimitri/doxygen/index.html Doxygen: Source code documentation generator tool]
   * [http://en.wikipedia.org/wiki/Dependency_injection Dependency injection Frameworks including C++]
+  * [http://www.boost.org/ Boost C++ Libraries]
 
 == Script Languages ==
 
