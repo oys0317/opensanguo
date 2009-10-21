@@ -15,6 +15,7 @@
 
   * [http://www.lua.org/ Official Lua web site]
   * [http://lua-users.org/wiki/ lua-users wiki]
+  * [http://www.rasterbar.com/products/luabind.html Luabind]
 
 == GUI Libraries ==
 
