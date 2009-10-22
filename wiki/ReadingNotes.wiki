@@ -2,7 +2,7 @@
 #labels Phase-Implementation
 <wiki:toc max_depth="3" />
 
-= AI =
+= Programming Game AI by Example =
 
 == The movement of an autonomous agent ==
 
