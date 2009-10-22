@@ -28,3 +28,8 @@ Instead of a finite state machine-based architecture, an agent's behavior is def
 may be either atomic or composite, thereby defining a nested hierarchy. Composites usually describe more complex tasks than their atomic brethren such as build weapons factory or retreat and find cover. Both types of goals are able to monitor their status and have the capability to replan if they fail.
 
 This hierarchical architecture provides the AI programmer with an intuitive mechanism for defining agent behavior because it shares many similarities with the human thought process. Humans select high-level abstract goals based upon their needs and desires and then recursively decompose them into a plan of action that can be followed.
+
+One great thing about a hierarchical goal-based arbitration design is that extra features are provided with little additional effort from the programmer. Personality is one good example. Because the desirability scores are constrained to the same range, it's a simple matter to create agents with different personality traits by multiplying each score with a constant that biases it in the required direction.
+
+The stack-like (LIFO) nature of composite goals automatically endows agents with a memory, enabling them to temporarily change behavior by pushing a new goal (or goals) onto the front of the current goal's subgoal list. As soon as the new goal is satisfied it will popped from the list and the agent will resume whatever it was doing previously. This is a very powerful feature that can be exploited in many different ways. For example:
+Automatic Resuming of Interrupted Activities, Negotiating Special Path Obstacles, Command Queuing, and Using the Queue to Script Behavior.
