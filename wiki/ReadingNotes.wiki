@@ -33,3 +33,11 @@ One great thing about a hierarchical goal-based arbitration design is that extra
 
 The stack-like (LIFO) nature of composite goals automatically endows agents with a memory, enabling them to temporarily change behavior by pushing a new goal (or goals) onto the front of the current goal's subgoal list. As soon as the new goal is satisfied it will popped from the list and the agent will resume whatever it was doing previously. This is a very powerful feature that can be exploited in many different ways. For example:
 Automatic Resuming of Interrupted Activities, Negotiating Special Path Obstacles, Command Queuing, and Using the Queue to Script Behavior.
+
+== Fuzzy Logic ==
+
+Fuzzy logic, invented by a man named _Lotfi Zadeh_ in the mid-sixties, enables a computer to reason about linguistic terms and rules in a way similar to humans. Concepts like "far" or "slightly" are not represented by discrete intervals, but by fuzzy sets, enabling values to be assigned to sets to a matter of a degree — a process called fuzzification. Using fuzzified values computers are able to interpret linguistic rules and produce an output that may remain fuzzy or — more commonly, especially in video games — can be defuzzified to provide a crisp value. This is known as fuzzy rule-based inference, and is one of the most popular uses of fuzzy logic.
+
+{{{
+fuzzification -> fuzzy rules -> defuzzification
+}}}
