@@ -41,3 +41,5 @@ Fuzzy logic, invented by a man named _Lotfi Zadeh_ in the mid-sixties, enables a
 {{{
 fuzzification -> fuzzy rules -> defuzzification
 }}}
+
+One major problem with fuzzy inference systems is that as the complexity of the problem increases, the number of rules required escalates at an alarming rate. In 1997 Combs proposed a system that enables the number of rules to grow linearly with the number of member sets instead of exponentially. A rule base can be defined that contains only one rule per consequent member set. One of the drawbacks with this method is that the changes to the rule base required to accommodate the logic are not intuitive. 
