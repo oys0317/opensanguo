@@ -55,6 +55,7 @@
   
 == IDEs ==
 
+  * [http://msdn.microsoft.com/en-us/visualc/default.aspx Visual C++]
   * [http://www.eclipse.org/downloads/ Eclipse for C/C++]
   * [http://www.codeblocks.org/ Code::Blocks]
   * [http://www.kdevelop.org/ KDevelop]
@@ -65,6 +66,7 @@
   * [http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks List of unit testing frameworks]
   * [http://sourceforge.net/apps/mediawiki/cppunit/index.php?title=Main_Page CppUnit]
   * [http://code.google.com/p/googletest/ Google C++ Testing Framework] 
+  * [http://code.google.com/p/googlemock/ Google C++ Mocking Framework]
 
 == Articles ==
 
@@ -76,6 +78,7 @@
   * [http://www.ogre3d.org/wiki/index.php/Getting_Started_With_CMake Getting started with CMake] 
   * [http://www.policyalmanac.org/games/aStarTutorial.htm A* Pathfinding for Beginners]
   * [http://en.wikipedia.org/wiki/A*_search_algorithm A* Search Algorithm]
+  * [http://schneide.wordpress.com/2008/09/29/using-hudson-for-ccmakecppunit/ Using Hudson for C++/CMake/CppUnit]
 
 == Books ==
 
