@@ -63,6 +63,8 @@
 == Testing ==
 
   * [http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks List of unit testing frameworks]
+  * [http://sourceforge.net/apps/mediawiki/cppunit/index.php?title=Main_Page CppUnit]
+  * [http://code.google.com/p/googletest/ Google C++ Testing Framework] 
 
 == Articles ==
 
