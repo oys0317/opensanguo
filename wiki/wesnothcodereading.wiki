@@ -8,3 +8,7 @@
 http://www.wesnoth.org/
 
 = 代码研究 =
+
+== Build系统 ==
+
+发现Wesnoth支持GNU make, cmake, 和SCons。
