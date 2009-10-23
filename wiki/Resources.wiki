@@ -3,8 +3,6 @@
 
 == C/C++ ==
  
-  * [http://www.gnu.org/software/make/ GNU Make]
-  * [http://www.cmake.org/ CMake]
   * [http://www.cppreference.com/wiki/stl/start C++ Standard Template Library]
   * [http://gcc.gnu.org/ GCC]
   * [http://www.stack.nl/~dimitri/doxygen/index.html Doxygen: Source code documentation generator tool]
@@ -67,6 +65,13 @@
   * [http://sourceforge.net/apps/mediawiki/cppunit/index.php?title=Main_Page CppUnit]
   * [http://code.google.com/p/googletest/ Google C++ Testing Framework] 
   * [http://code.google.com/p/googlemock/ Google C++ Mocking Framework]
+
+== Build & Package ==
+
+  * [http://www.gnu.org/software/make/ GNU Make]
+  * [http://www.cmake.org/ CMake]  
+  * [http://www.scons.org/ SCons]
+  * [http://en.wikipedia.org/wiki/SCons SCons Wiki]
 
 == Articles ==
 
