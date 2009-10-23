@@ -50,7 +50,8 @@
   * [http://freeciv.wikia.com/wiki/Main_Page FreeCiv]
   * [http://blog.taragana.com/index.php/archive/top-10-free-linux-games-in-2009/ Top 10 Free Linux Games in 2009]
   * [http://sathyasays.com/2008/01/12/25-top-3d-linux-games/ 25 Top 3D Linux Games]
-  
+  * [http://wesnoth.cn/viewthread.php?tid=64&highlight= Linux优秀游戏收集 2007-11-9] 
+
 == IDEs ==
 
   * [http://msdn.microsoft.com/en-us/visualc/default.aspx Visual C++]
