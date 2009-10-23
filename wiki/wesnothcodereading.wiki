@@ -3,7 +3,7 @@
 
 = Wesnoth代码 =
 
-请下载Wesnoth代码
+请下载Wesnoth 1.6.5代码
 
 http://www.wesnoth.org/
 
