@@ -93,3 +93,9 @@
   * Focus On SDL: The Premier Press Game Development Series, 2002
   * Programming Game AI by Example, 2004
   * Beginning Lua Programming, 2007 
+
+== See Also (相关游戏) ==
+
+  * [http://code.google.com/p/chinasanguozhi/ 中华三国志]
+  * [http://code.google.com/p/sanguoforciv4/ 三国春秋]
+  * [http://www.freeors.com/bbs/forumdisplay.php?fid=37 王国战争]
