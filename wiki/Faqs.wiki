@@ -88,3 +88,17 @@ cmake -G "CodeBlocks - Unix Makefiles"  .
 {{{
 yum install blender blenderplayer -y
 }}} 
+
+== How to Get Wesnoth Trunk Code ==
+
+Checkout over SVN protocol (TCP 3690):
+
+{{{
+svn co svn://svn.gna.org/svn/wesnoth/trunk wesnoth
+}}}
+
+Checkout over http:
+
+{{{
+svn co http://svn.gna.org/svn/wesnoth/trunk wesnoth
+}}}
