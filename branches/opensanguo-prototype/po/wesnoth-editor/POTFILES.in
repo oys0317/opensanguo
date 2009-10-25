@@ -1,0 +1,15 @@
+src/editor2/action.cpp
+src/editor2/brush.cpp
+src/editor2/editor_controller.cpp
+src/editor2/editor_display.cpp
+src/editor2/editor_layout.cpp
+src/editor2/editor_main.cpp
+src/editor2/editor_map.cpp
+src/editor2/editor_palettes.cpp
+src/editor2/map_context.cpp
+src/editor2/map_fragment.cpp
+src/editor2/mouse_action.cpp
+src/gui/dialogs/editor_generate_map.cpp
+src/gui/dialogs/editor_new_map.cpp
+src/gui/dialogs/editor_resize_map.cpp
+src/gui/dialogs/editor_settings.cpp

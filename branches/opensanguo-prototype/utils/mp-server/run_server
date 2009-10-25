@@ -1,0 +1,92 @@
+#!/bin/sh
+die() { 
+	echo >&2 "$@"
+	exit 1
+}
+dietail() {
+	echo >&2 "$@"
+	echo >&2 "tail $LOG:"
+	tail $SERVERBASE/logs/$LOG
+	exit 1
+}
+[ $# -ge 1 ] || die "Syntax: $0 <server version> [--test] [<additional parameters for wesnothd>]"
+
+SERVER=$1
+SERVERBASE=$HOME/servers/$SERVER
+[ -d "$SERVERBASE" ] || die "Server '$VERSION' not found."
+[ -d "$SERVERBASE/logs" ] || mkdir $SERVERBASE/logs
+
+shift
+if [ "$1" = "--test" ]; then
+	shift
+	PARAMETERS=$*
+	cd $SERVERBASE/build || exit 1
+	bin/wesnothd-$SERVER -c $SERVERBASE/wesnothd.cfg --port 15001 $PARAMETERS
+	# remove the socket so it looks like we never ran the server
+	rm var/run/socket
+	exit 0
+fi
+
+PARAMETERS=$*
+THREADS=4
+PORT=15000
+
+case $SERVER in
+	1.4)
+		PORT=14998
+		THREADS=32
+		;;
+	1.6)
+		PORT=14999
+		THREADS=32
+		;;
+	1.5*)
+		PORT=14999
+		THREADS=16
+		;;
+	1.7*)
+		PORT=14997
+		THREADS=16
+		;;
+	trunk)
+		PORT=15000
+		;;
+esac
+
+ulimit -Ss 2048
+ulimit -c unlimited
+
+# send the standard server message to the appropriate server when killing it with ctrl+c
+trap "$HOME/bin/send_server_message $SERVER; sleep 2; echo -n 'terminated: '; date; exit 0" INT
+
+while [ true ] 
+do
+	cd $SERVERBASE/build || exit 1
+	[ -x bin/wesnothd-$SERVER ] || die "Executable 'bin/wesnothd-$SERVER' not found."
+
+	DATE=$(date +"%Y%m%d-%H%M%S")
+	[ ! -f "$SERVERBASE/redirect.cfg" ] || PORT=$(sed -re '/port=/!d;s/[ \t]*port="?([0-9]+)"?/\1/' $SERVERBASE/redirect.cfg)
+	BUILDDIR=$(ls -ld $SERVERBASE/build | sed -e 's,.*\(\.\./builds/wesnothd-.*/\),\1,')
+	REV=r$(echo "$BUILDDIR" | sed -re "s,.*wesnothd-svn-([0-9:SM]+)_$SERVER/$,\1,")
+	LOG="wesnothd.$DATE.$REV.log"
+	COMMAND="bin/wesnothd-$SERVER -c $SERVERBASE/wesnothd.cfg --port $PORT --threads $THREADS $PARAMETERS"
+	$COMMAND &> "$SERVERBASE/logs/$LOG" &
+
+	PID=$!
+	echo "started $SERVER server with command: '$COMMAND' (revision: $REV, pid: $PID) logging to: $LOG"
+	# create some convenient links
+	ln -s "$SERVERBASE/logs/$LOG" "$LOG.$PID"
+	rm -f $SERVERBASE/old.log
+	mv $SERVERBASE/current.log $SERVERBASE/old.log &> /dev/null
+	ln -s "logs/$LOG" $SERVERBASE/current.log
+	# wait for the server to terminate
+	wait $PID
+
+	EXIT_CODE=$?
+	echo "wesnothd exited with code: $EXIT_CODE"
+	# need to use the recorded path since the build/ symlink might have changed
+	mv "$SERVERBASE/$BUILDDIR/gmon.out" "$SERVERBASE/$BUILDDIR/gmon.$DATE.$REV.out" &> /dev/null
+	# check for return code if not zero or 98 (port in use) the server should be restarted
+	[ "$EXIT_CODE" != "0" ] || exit 0
+	[ "$EXIT_CODE" != "98" ] || dietail #Could not bind to port
+done

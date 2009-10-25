@@ -1,0 +1,1 @@
+find data/campaigns/Two_Brothers -name '*.cfg' -print
