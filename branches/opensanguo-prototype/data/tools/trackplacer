@@ -92,7 +92,8 @@ import wesnoth.wmltools
 # The code does no semantic interpretation of these icons at all;
 # to add new ones, just fill in a dictionary entry.
 imagedir = "data/core/images/"
-default_map = imagedir + "maps/wesnoth.png"
+#default_map = imagedir + "maps/wesnoth.png"
+default_map = imagedir + "maps/opensanguo.png"
 selected_icon_dictionary = {
     "JOURNEY": imagedir + "misc/new-journey.png",
     "BATTLE":  imagedir + "misc/new-battle.png",
