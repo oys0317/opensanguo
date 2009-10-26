@@ -6049,6 +6049,9 @@ msgstr ""
 msgid "The Battle for Wesnoth"
 msgstr ""
 
+msgid "Open Sanguo"
+msgstr ""
+
 #: src/game.cpp:998 src/game.cpp:1006
 msgid "The file you have tried to load is corrupt"
 msgstr ""
@@ -6435,6 +6438,9 @@ msgstr ""
 
 #: src/help.cpp:3160
 msgid "The Battle for Wesnoth Help"
+msgstr ""
+
+msgid "Open Sanguo Help"
 msgstr ""
 
 #: src/help.cpp:3216
