@@ -1,1 +1,0 @@
-find data/campaigns/The_Hammer_of_Thursagan -name '*.cfg' -print
