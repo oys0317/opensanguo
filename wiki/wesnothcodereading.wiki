@@ -3,12 +3,32 @@
 
 = Wesnoth代码 =
 
-请下载Wesnoth 1.6.5代码
+请下载Wesnoth 1.7.7代码
 
 http://www.wesnoth.org/
+
+或下载我们的清理版从
+
+{{{
+http://opensanguo.googlecode.com/svn/branches/wesnoth-1.7.7-cleanup
+}}}
 
 = 代码研究 =
 
 == Build系统 ==
 
 发现Wesnoth支持GNU make, cmake, 和SCons。
+
+== 国际化支持 i18n ==
+
+在代码项目的目录
+{{{
+po/LINGUAS
+}}}
+包括所支持的语言，如清除版为
+
+{{{
+en_GB zh_CN zh_TW
+}}}
+
+po目录下包括所有信息的国际化版本。
