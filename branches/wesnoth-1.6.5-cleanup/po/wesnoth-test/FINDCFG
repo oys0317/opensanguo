@@ -1,1 +1,0 @@
-find data/test -name '*.cfg' -print
