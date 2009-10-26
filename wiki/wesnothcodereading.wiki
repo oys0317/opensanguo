@@ -1,5 +1,6 @@
 #summary Wesnoth代码研究.
 #labels Phase-Design
+<wiki:toc max_depth="3" />
 
 = Wesnoth代码 =
 
