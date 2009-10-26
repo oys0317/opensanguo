@@ -102,3 +102,11 @@ Checkout over http:
 {{{
 svn co http://svn.gna.org/svn/wesnoth/trunk wesnoth
 }}}
+
+== How to compile Wesnoth on Windows with MSVC 2008 == 
+
+http://forums.wesnoth.org/viewtopic.php?f=5&t=24879
+
+== How to compile Wesnoth on Windows with Dev-Cpp, Code::Blocks ==
+
+http://forums.wesnoth.org/viewtopic.php?f=5&t=18877
