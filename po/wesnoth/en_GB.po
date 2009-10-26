@@ -7769,6 +7769,9 @@ msgstr "Moves: "
 msgid "The Battle for Wesnoth"
 msgstr "The Battle for Wesnoth"
 
+msgid "Open Sanguo"
+msgstr "Open Sanguo"
+
 #: src/game.cpp:998 src/game.cpp:1006
 msgid "The file you have tried to load is corrupt"
 msgstr "The file you have tried to load is corrupt"
@@ -8168,6 +8171,9 @@ msgstr "corrupted original file"
 #: src/help.cpp:3160
 msgid "The Battle for Wesnoth Help"
 msgstr "The Battle for Wesnoth Help"
+
+msgid "Open Sanguo Help"
+msgstr "Open Sanguo Help"
 
 #: src/help.cpp:3216
 msgid "Parse error when parsing help text: "

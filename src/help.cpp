@@ -3157,7 +3157,9 @@ void show_help(display &disp, const section &toplevel_sec,
 	gui::button close_button_(disp.video(), _("Close"));
 	buttons_ptr.push_back(&close_button_);
 
-	gui::dialog_frame f(disp.video(), _("The Battle for Wesnoth Help"), gui::dialog_frame::default_style,
+//	gui::dialog_frame f(disp.video(), _("The Battle for Wesnoth Help"), gui::dialog_frame::default_style,
+//					 true, &buttons_ptr);
+	gui::dialog_frame f(disp.video(), _("Open Sanguo Help"), gui::dialog_frame::default_style,
 					 true, &buttons_ptr);
 	f.layout(xloc, yloc, width, height);
 	f.draw();
