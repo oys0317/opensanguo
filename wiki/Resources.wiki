@@ -52,6 +52,10 @@
   * [http://sathyasays.com/2008/01/12/25-top-3d-linux-games/ 25 Top 3D Linux Games]
   * [http://wesnoth.cn/viewthread.php?tid=64&highlight= Linux优秀游戏收集 2007-11-9] 
 
+== Internationalization (i18n) ==
+
+  * [http://www.gnu.org/software/gettext/manual/gettext.html GNU gettext]
+
 == IDEs ==
 
   * [http://msdn.microsoft.com/en-us/visualc/default.aspx Visual C++]
