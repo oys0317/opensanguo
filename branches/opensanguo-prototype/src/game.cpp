@@ -664,7 +664,8 @@ bool game_controller::init_language()
 		return false;
 
 	if(!no_gui_) {
-		std::string wm_title_string = _("The Battle for Wesnoth");
+//		std::string wm_title_string = _("The Battle for Wesnoth");
+		std::string wm_title_string = _("Open Sanguo");
 		wm_title_string += " - " + game_config::revision;
 		SDL_WM_SetCaption(wm_title_string.c_str(), NULL);
 	}
@@ -1400,7 +1401,8 @@ bool game_controller::change_language()
 
 	if(dlg.get_retval() == gui2::twindow::OK) {
 		if(!no_gui_) {
-			std::string wm_title_string = _("The Battle for Wesnoth");
+//			std::string wm_title_string = _("The Battle for Wesnoth");
+			std::string wm_title_string = _("Open Sanguo");
 			wm_title_string += " - " + game_config::revision;
 			SDL_WM_SetCaption(wm_title_string.c_str(), NULL);
 		}
@@ -2183,7 +2185,8 @@ int main(int argc, char** argv)
 	}
 
 	try {
-		std::cerr << "Battle for Wesnoth v" << game_config::revision << '\n';
+//		std::cerr << "Battle for Wesnoth v" << game_config::revision << '\n';
+		std::cerr << "Open Sanguo v" << game_config::revision << '\n';
 		const time_t t = time(NULL);
 		std::cerr << "Started on " << ctime(&t) << "\n";
 

@@ -7203,6 +7203,9 @@ msgstr "移動： "
 msgid "The Battle for Wesnoth"
 msgstr "Battle for Wesnoth"
 
+msgid "Open Sanguo"
+msgstr "开放三国"
+
 #: src/game.cpp:998 src/game.cpp:1006
 msgid "The file you have tried to load is corrupt"
 msgstr "您想載入的文件已損壞"
@@ -7600,6 +7603,9 @@ msgstr "原始文件出錯"
 #: src/help.cpp:3160
 msgid "The Battle for Wesnoth Help"
 msgstr "韋諾之戰說明"
+
+msgid "Open Sanguo Help"
+msgstr "开放三国說明"
 
 #: src/help.cpp:3216
 msgid "Parse error when parsing help text: "
