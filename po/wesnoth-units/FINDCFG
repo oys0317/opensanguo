@@ -1,0 +1,2 @@
+find data/core/units -name '*.cfg' -print
+find data/campaigns/*/units -name '*.cfg' -print
