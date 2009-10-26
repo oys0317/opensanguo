@@ -19,7 +19,6 @@ set(NORMAL_DOMAINS
     wesnoth-lib
     wesnoth-multiplayer
     wesnoth-test
-    wesnoth-trow
     wesnoth-tutorial
     wesnoth-units
 )
