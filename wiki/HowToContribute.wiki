@@ -20,7 +20,7 @@
 
 本项目刚刚起步，欢迎感兴趣的志愿者加入开发队伍，包括设计，开发，美工，测试，文档和其他的方面的人才。我们欢迎以下的贡献：
 
-  * 参加［http://groups.google.com/group/opensanguo-discussion Open Sanguo讨论组], 积极参与讨论。
+  * 参加[http://groups.google.com/group/opensanguo-discussion Open Sanguo讨论组], 积极参与讨论。
   * 贡献三国人物的图像，png格式。
   * 帮助我们用Wesnoth的地图编辑器编辑三国地图。
   * 提供三国历史有关资源：如军制，人物，地理，史话等。
