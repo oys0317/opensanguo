@@ -36,6 +36,8 @@ po目录下包括所有信息的国际化版本。Wesnoth国际化的支持是�
 
 == 主流程 ==
 
+游戏的主控文件是src/game.cpp. 主屏幕的文件是src/titlescreen.cpp和src/gui/dialog/title_screen.cpp.
+
 == WML ==
 
 == 地图 ==
