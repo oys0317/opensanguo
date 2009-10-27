@@ -228,6 +228,7 @@ const config* get_tip_of_day(config& tips_of_day)
  *  Show one tip-of-the-day in a frame on the titlescreen.
  *  This frame has 2 buttons: Next-Tip, and Show-Help.
  */
+/*
 static void draw_tip_of_day(game_display& screen,
 							config& tips_of_day,
 							const gui::dialog_frame::style& style,
@@ -301,6 +302,7 @@ static void draw_tip_of_day(game_display& screen,
 		LOG_DP << "drew tip of day\n";
 	}
 }
+*/
 
 /**
  *  Draw the map image background, revision number
@@ -500,6 +502,7 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 		if(b + TUTORIAL == QUIT_GAME) break;
 	}
 
+/*
 	b = TIP_PREVIOUS - TUTORIAL;
 	gui::button previous_tip_button(screen.video(),sgettext(button_labels[b]),button::TYPE_PRESS,"lite_small");
 	previous_tip_button.set_help_string( sgettext(button_labels[b] ));
@@ -526,7 +529,7 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 	beg_button.set_location(screen.w() - pad - beg_button.location().w,
 		screen.h() - pad - beg_button.location().h);
 	events::raise_draw_event();
-
+*/
 	LOG_DP << "drew buttons dialog\n";
 
 	CKey key;
@@ -549,6 +552,7 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 			}
 		}
 
+/*
 		if(previous_tip_button.pressed()) {
 			next_tip_of_day(tips_of_day, true);
 			draw_tip_of_day(screen, tips_of_day, gui::dialog_frame::titlescreen_style,
@@ -566,6 +570,7 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 		if(beg_button.pressed()) {
 			return BEG_FOR_UPLOAD;
 		}
+*/
 		if (key[SDLK_UP]) {
 			if (!key_processed) {
 				buttons[keyboard_button].set_active(false);
