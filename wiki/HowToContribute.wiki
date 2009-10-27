@@ -1,0 +1,20 @@
+#summary HowToContribute如何贡献.
+#labels Phase-Support
+
+= How to Contribute to Open Sanguo如何为开放三国作贡献 =
+
+== 队伍建设 ==
+
+如果我们的项目能坚持发展下去，我们至少应该有下面的队伍：
+
+  * Management board（整个项目管理）
+  * Development team（开发队伍）
+  * Artwork and Graphics team（美工）
+  * Music team （音乐）
+  * QA team （测试）
+  * Build and Release team （软件包装和发行）
+  * Documentation team （文档）
+  * Evangelism Team （宣传） 
+
+== 如何贡献 ==
+
