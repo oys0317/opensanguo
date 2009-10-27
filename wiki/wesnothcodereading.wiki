@@ -38,6 +38,10 @@ po目录下包括所有信息的国际化版本。Wesnoth国际化的支持是�
 
 游戏的主控文件是src/game.cpp. 主屏幕的文件是src/titlescreen.cpp和src/gui/dialog/title_screen.cpp.
 
+Wesnoth类class的继承关系如下图所示：
+
+http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.png?gda=5oRR9FIAAACTlBM1Dubmc8Sna2xtBhdCD7sMC9uslSV3Pn6dhbfYkglh_2lrmuCwoWKx3olnZveYbdVPrPBVgXglYZeZYISiVeLt2muIgCMmECKmxvZ2j4IeqPHHCwbz-gobneSjMyE&gsc=rbn_8AsAAADRUEjKYwzmWgSj6jAU2K3b
+
 == WML ==
 
 == 地图 ==
