@@ -1,5 +1,5 @@
 #summary HowToContribute如何贡献.
-#labels Phase-Support
+#labels Phase-Support,Featured
 
 = How to Contribute to Open Sanguo如何为开放三国作贡献 =
 
