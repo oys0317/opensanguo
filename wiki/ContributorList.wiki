@@ -1,4 +1,4 @@
-#summary Open Sanguo Contributor 开放三国贡献者.
+#summary Open Sanguo Contributor开放三国贡献者.
 #labels Phase-Support
 
 = Open Sanguo Team 开放三国团队 =
