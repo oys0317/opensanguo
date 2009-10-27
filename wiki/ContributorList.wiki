@@ -1,0 +1,12 @@
+#summary Open Sanguo Contributor 开发三国贡献者.
+#labels Phase-Support
+
+= Open Sanguo Team 开放三国团队 =
+
+  * Jian Fang: 开放三国发起人。［http://code.google.com/p/aost/ Tellurium自动测试框架］项目的负责人.
+  * clipon.cn: [http://code.google.com/p/chinasanguozhi/ 中华三国志]的设计和开发者。
+  * D_BOY:
+  * stmartin: [http://code.google.com/p/sanguoforciv4/ 三国春秋]项目的负责人。  
+  * ancientcc: [http://www.freeors.com/bbs/forumdisplay.php?fid=37 王国战争]的开发者。
+
+= Other Contributors 其他贡献者 =
