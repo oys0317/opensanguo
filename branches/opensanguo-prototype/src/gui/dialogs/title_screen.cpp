@@ -99,6 +99,7 @@ void ttitle_screen::pre_show(CVideo& video, twindow& window)
 				show_dialog<gui2::tlanguage_selection>);
 
 	/**** Set the tip of the day ****/
+/*
 	update_tip(window, true);
 
 	find_widget<tbutton>(&window, "next_tip", false).
@@ -106,6 +107,7 @@ void ttitle_screen::pre_show(CVideo& video, twindow& window)
 
 	find_widget<tbutton>(&window, "previous_tip", false).
 			set_callback_mouse_left_click(previous_tip);
+*/
 
 	/***** Select a random game_title *****/
 	std::vector<std::string> game_title_list =
