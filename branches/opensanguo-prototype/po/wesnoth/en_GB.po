@@ -10709,3 +10709,6 @@ msgstr "Enable summary uploads"
 
 #~ msgid "Impassable Desert Mountains"
 #~ msgstr "Impassable Desert Mountains"
+
+msgid "Special thanks to Wesnoth Team"
+msgstr "Special thanks to Wesnoth Team"

@@ -8296,3 +8296,6 @@ msgstr ""
 #: src/upload_log.cpp:374
 msgid "Enable summary uploads"
 msgstr ""
+
+msgid "Special thanks to Wesnoth Team"
+msgstr ""

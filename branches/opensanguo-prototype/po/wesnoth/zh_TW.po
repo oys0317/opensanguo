@@ -10746,3 +10746,6 @@ msgstr "開啟訊息回報"
 
 #~ msgid "Damage Taken"
 #~ msgstr "受到傷害"
+
+msgid "Special thanks to Wesnoth Team"
+msgstr "特别感谢Wesnoth开发团队"
