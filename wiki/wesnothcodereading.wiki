@@ -144,4 +144,12 @@ http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.pn
 
 == Lua 脚本 ==
 
+== 音乐 ==
+
+配置文件在： 
+
+{{{
+data/core/macros/sound-utils.cfg
+}}}
+
 == Testing 测试 ==
