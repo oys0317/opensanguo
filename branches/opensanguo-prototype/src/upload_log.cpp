@@ -364,6 +364,17 @@ void upload_log::quit(int turn)
 /** Ask user for permission to upload his game-stats. */
 void upload_log_dialog::show_beg_dialog(display& disp)
 {
+	std::string msg = std::string(_("Open Sanguo needs your feedback\n")) + "\n \n";
+	gui::dialog d(disp, _("Help us make Open Sanguo better for you!"), msg, gui::OK_ONLY);
+
+//	d.add_option(_("Enable summary uploads"),
+//		preferences::upload_log(), gui::dialog::BUTTON_CHECKBOX_LEFT);
+	d.show();
+//	preferences::set_upload_log(d.option_checked());
+}
+/*
+void upload_log_dialog::show_beg_dialog(display& disp)
+{
 	std::string msg = std::string(_("Wesnoth relies on volunteers like yourself for feedback, especially beginners and new players. Wesnoth keeps summaries of your games: you can help us improve game play by giving permission to send these summaries (anonymously) to wesnoth.org.\n"))
 		+ " \n`" + _("Summaries are stored here:")
 		+ " \n`~" + get_upload_dir() + "\n \n`"
@@ -376,3 +387,4 @@ void upload_log_dialog::show_beg_dialog(display& disp)
 	d.show();
 	preferences::set_upload_log(d.option_checked());
 }
+*/
