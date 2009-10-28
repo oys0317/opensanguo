@@ -9674,3 +9674,6 @@ msgstr "开启摘要上传"
 
 #~ msgid "The replay could not be saved"
 #~ msgstr "无法保存游戏录像"
+
+msgid "Special thanks to Wesnoth Team"
+msgstr "特别感谢Wesnoth开发团队"
