@@ -9308,6 +9308,9 @@ msgstr "說明"
 msgid "TitleScreen button^Help Wesnoth"
 msgstr "幫助韋諾之戰團隊"
 
+msgid "TitleScreen button^Help Open Sanguo"
+msgstr "幫助开放三国團隊"
+
 #: src/titlescreen.cpp:442
 msgid "Start a tutorial to familiarize yourself with the game"
 msgstr "通過教學模式來熟悉遊戲"
@@ -9366,9 +9369,15 @@ msgstr "上傳統計資料"
 msgid "Help Wesnoth"
 msgstr "幫助韋諾"
 
+msgid "Help Open Sanguo"
+msgstr "幫助开放三国"
+
 #: src/titlescreen.cpp:516
 msgid "Help Wesnoth by sending us information"
 msgstr "回報資訊，幫助韋諾"
+
+msgid "Help Open Sanguo by providing us feedback"
+msgstr "提供反馈，幫助开放三国"
 
 #: src/tod_manager.cpp:97 src/tod_manager.cpp:129 src/tod_manager.cpp:233
 #: src/tod_manager.cpp:246 src/tod_manager.cpp:296
@@ -9467,6 +9476,13 @@ msgstr ""
 "韋諾藉著跟您一樣的玩家給我們提供回報訊息，特別是來自新手。韋諾之戰保存了您的"
 "回報資訊，如果您允許（匿名）發送這些摘要給wesnoth.org，將幫助我們改進遊戲。\n"
 
+msgid "Open Sanguo needs your feedback\n"
+msgstr ""
+"开放三国依赖像您一样的志愿者提供反馈信息. 请访问开放三国的网站:\n"
+"  http://code.google.com/p/opensanguo/\n"
+"并到开放三国论坛提供反馈：\n"
+"  http://groups.google.com/group/opensanguo-discussion\n"
+
 #: src/upload_log.cpp:368
 msgid "Summaries are stored here:"
 msgstr "回報儲存在這裏："
@@ -9478,6 +9494,9 @@ msgstr "您可以在這裡檢視記錄："
 #: src/upload_log.cpp:372
 msgid "Help us make Wesnoth better for you!"
 msgstr "幫助我們改進韋諾，提升您的遊戲體驗！"
+
+msgid "Help us make Open Sanguo better for you!"
+msgstr "幫助我們改進开放三国，提升您的遊戲體驗！"
 
 #: src/upload_log.cpp:374
 msgid "Enable summary uploads"

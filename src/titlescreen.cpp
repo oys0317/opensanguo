@@ -439,7 +439,8 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 					       N_("TitleScreen button^Next"),
 					       N_("TitleScreen button^Help"),
 								// Next entry is no button, but shown as a mail-icon instead:
-					       N_("TitleScreen button^Help Wesnoth") };
+//					       N_("TitleScreen button^Help Wesnoth") };
+					       N_("TitleScreen button^Help Open Sanguo") };
 	//- Texts for the tooltips of the menu-buttons
 	static const char* help_button_labels[] = { N_("Start a tutorial to familiarize yourself with the game"),
 						    N_("Start a new single player campaign"),
@@ -514,22 +515,25 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 	b = SHOW_HELP - TUTORIAL;
 	gui::button help_tip_button(screen.video(),sgettext(button_labels[b]),button::TYPE_PRESS,"lite_small");
 	help_tip_button.set_help_string( sgettext(button_labels[b] ));
+*/
+	gui::button beg_button(screen.video(),_("Help Open Sanguo"),button::TYPE_IMAGE,"menu-button",button::MINIMUM_SPACE);
+	beg_button.set_help_string(_("Help Open Sanguo by providing us feedback"));
 
-	gui::button beg_button(screen.video(),_("Help Wesnoth"),button::TYPE_IMAGE,"menu-button",button::MINIMUM_SPACE);
-	beg_button.set_help_string(_("Help Wesnoth by sending us information"));
+//	gui::button beg_button(screen.video(),_("Help Wesnoth"),button::TYPE_IMAGE,"menu-button",button::MINIMUM_SPACE);
+//	beg_button.set_help_string(_("Help Wesnoth by sending us information"));
 
-	next_tip_of_day(tips_of_day);
+//	next_tip_of_day(tips_of_day);
 
-	surface_restorer tip_of_day_restorer;
+//	surface_restorer tip_of_day_restorer;
 
-	draw_tip_of_day(screen, tips_of_day, gui::dialog_frame::titlescreen_style,
-					&previous_tip_button, &next_tip_button, &help_tip_button, &main_dialog_area, tip_of_day_restorer);
+//	draw_tip_of_day(screen, tips_of_day, gui::dialog_frame::titlescreen_style,
+//					&previous_tip_button, &next_tip_button, &help_tip_button, &main_dialog_area, tip_of_day_restorer);
 
 	const int pad = game_config::title_tip_padding;
 	beg_button.set_location(screen.w() - pad - beg_button.location().w,
 		screen.h() - pad - beg_button.location().h);
 	events::raise_draw_event();
-*/
+
 	LOG_DP << "drew buttons dialog\n";
 
 	CKey key;
@@ -567,10 +571,12 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 		if(help_tip_button.pressed()) {
 			return SHOW_HELP;
 		}
+*/
+
 		if(beg_button.pressed()) {
 			return BEG_FOR_UPLOAD;
 		}
-*/
+
 		if (key[SDLK_UP]) {
 			if (!key_processed) {
 				buttons[keyboard_button].set_active(false);

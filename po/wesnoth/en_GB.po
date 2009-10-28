@@ -9894,6 +9894,9 @@ msgstr "Help"
 msgid "TitleScreen button^Help Wesnoth"
 msgstr "Help Wesnoth"
 
+msgid "TitleScreen button^Help Open Sanguo"
+msgstr "Help Open Sanguo"
+
 #: src/titlescreen.cpp:442
 msgid "Start a tutorial to familiarize yourself with the game"
 msgstr "Start a tutorial to familiarise yourself with the game"
@@ -9954,9 +9957,15 @@ msgstr "Upload statistics"
 msgid "Help Wesnoth"
 msgstr "Help Wesnoth"
 
+msgid "Help Open Sanguo"
+msgstr "Help Open Sanguo"
+
 #: src/titlescreen.cpp:516
 msgid "Help Wesnoth by sending us information"
 msgstr "Help Wesnoth by sending us information"
+
+msgid "Help Open Sanguo by providing us feedback"
+msgstr "Help Open Sanguo by providing us feedback"
 
 #: src/tod_manager.cpp:97 src/tod_manager.cpp:129 src/tod_manager.cpp:233
 #: src/tod_manager.cpp:246 src/tod_manager.cpp:296
@@ -10057,6 +10066,13 @@ msgstr ""
 "help us improve game play by giving permission to send these summaries "
 "(anonymously) to wesnoth.org.\n"
 
+msgid "Open Sanguo needs your feedback\n"
+msgstr ""
+"Open Sanguo relies on volunteers like yourself for feedback.\n"
+"Please visit Open Sanguo Project at,\n  http://code.google.com/p/opensanguo/\n"
+"and join Open Sanguo discussion group to provide your feedback:\n"
+"http://groups.google.com/group/opensanguo-discussion\n"
+
 #: src/upload_log.cpp:368
 msgid "Summaries are stored here:"
 msgstr "Summaries are stored here:"
@@ -10068,6 +10084,9 @@ msgstr "You can view the results at:"
 #: src/upload_log.cpp:372
 msgid "Help us make Wesnoth better for you!"
 msgstr "Help us make Wesnoth better for you!"
+
+msgid "Help us make Open Sanguo better for you!"
+msgstr "Help us make Open Sanguo better for you!"
 
 #: src/upload_log.cpp:374
 msgid "Enable summary uploads"

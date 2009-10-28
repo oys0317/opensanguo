@@ -8109,6 +8109,9 @@ msgstr ""
 msgid "TitleScreen button^Help Wesnoth"
 msgstr ""
 
+msgid "TitleScreen button^Help Open Sanguo"
+msgstr ""
+
 #: src/titlescreen.cpp:442
 msgid "Start a tutorial to familiarize yourself with the game"
 msgstr ""
@@ -8167,8 +8170,14 @@ msgstr ""
 msgid "Help Wesnoth"
 msgstr ""
 
+msgid "Help Open Sanguo"
+msgstr ""
+
 #: src/titlescreen.cpp:516
 msgid "Help Wesnoth by sending us information"
+msgstr ""
+
+msgid "Help Open Sanguo by providing us feedback"
 msgstr ""
 
 #: src/tod_manager.cpp:97 src/tod_manager.cpp:129 src/tod_manager.cpp:233
@@ -8266,6 +8275,9 @@ msgid ""
 "(anonymously) to wesnoth.org.\n"
 msgstr ""
 
+msgid "Open Sanguo needs your feedback\n"
+msgstr ""
+
 #: src/upload_log.cpp:368
 msgid "Summaries are stored here:"
 msgstr ""
@@ -8276,6 +8288,9 @@ msgstr ""
 
 #: src/upload_log.cpp:372
 msgid "Help us make Wesnoth better for you!"
+msgstr ""
+
+msgid "Help us make Open Sanguo better for you!"
 msgstr ""
 
 #: src/upload_log.cpp:374
