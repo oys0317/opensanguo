@@ -422,10 +422,11 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 	//- Members of this array must correspond to the enumeration TITLE_RESULT
 	static const char* button_labels[] = {
 					       N_("TitleScreen button^Tutorial"),
+					       N_("TitleScreen button^Game"),
 					       N_("TitleScreen button^Campaign"),
 					       N_("TitleScreen button^Multiplayer"),
 					       N_("TitleScreen button^Load"),
-					       N_("TitleScreen button^Add-ons"),
+//					       N_("TitleScreen button^Add-ons"),
 #ifndef DISABLE_EDITOR
 					       N_("TitleScreen button^Map Editor"),
 #endif
@@ -443,10 +444,11 @@ TITLE_RESULT show_title(game_display& screen, config& tips_of_day)
 					       N_("TitleScreen button^Help Open Sanguo") };
 	//- Texts for the tooltips of the menu-buttons
 	static const char* help_button_labels[] = { N_("Start a tutorial to familiarize yourself with the game"),
-						    N_("Start a new single player campaign"),
+							N_("Start a new single player game"),
+							N_("Start a new single player campaign"),
 						    N_("Play multiplayer (hotseat, LAN, or Internet), or a single scenario against the AI"),
 						    N_("Load a saved game"),
-						    N_("Download usermade campaigns, eras, or map packs"),
+//						    N_("Download usermade campaigns, eras, or map packs"),
 #ifndef DISABLE_EDITOR
 						    N_("Start the map editor"),
 #endif

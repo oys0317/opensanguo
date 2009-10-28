@@ -37,9 +37,10 @@ namespace gui {
  * automatic value so we need to avoid 0.
  */
 enum TITLE_RESULT { TUTORIAL = 1,		/**< Start special campaign 'tutorial' */
+					NEW_GAME,
 					NEW_CAMPAIGN,		/**< Let user select a campaign to play */
 					MULTIPLAYER,		/**< Play single scenario against humans or AI */
-					LOAD_GAME, GET_ADDONS,
+					LOAD_GAME,
 #ifndef DISABLE_EDITOR
 					START_MAP_EDITOR,
 #endif
@@ -52,6 +53,7 @@ enum TITLE_RESULT { TUTORIAL = 1,		/**< Start special campaign 'tutorial' */
 					BEG_FOR_UPLOAD,		/**< Ask user for permission to upload game-stats as feedback */
 					REDRAW_BACKGROUND,	/**< Used after an action needing a redraw (ex: fullscreen) */
 					RELOAD_GAME_DATA,	/**< Used to reload all game data */
+					GET_ADDONS,         //moved add-on here to keep the menu working
 					NOTHING				/**< Default, nothing done, no redraw needed */
 				  };
 

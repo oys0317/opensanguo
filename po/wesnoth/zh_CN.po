@@ -9372,6 +9372,9 @@ msgstr "border_size 应设为0.0到0.5之间的数值"
 msgid "TitleScreen button^Tutorial"
 msgstr "教程"
 
+msgid "TitleScreen button^Game"
+msgstr "游戏"
+
 #: src/titlescreen.cpp:423
 msgid "TitleScreen button^Campaign"
 msgstr "战役"
@@ -9434,6 +9437,9 @@ msgstr "通过教程来熟悉游戏"
 #: src/titlescreen.cpp:443
 msgid "Start a new single player campaign"
 msgstr "开始一个新的单人游戏战役"
+
+msgid "Start a new single player game"
+msgstr "开始一个新的单人游戏"
 
 #: src/titlescreen.cpp:444
 msgid ""

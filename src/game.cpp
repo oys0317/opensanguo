@@ -1931,9 +1931,11 @@ static int process_command_args(int argc, char** argv) {
  */
 static void init_locale() {
 	#ifdef _WIN32
-	    std::setlocale(LC_ALL, "English");
+//	    std::setlocale(LC_ALL, "English");
+		std::setlocale(LC_ALL, "Chinese");
 	#else
-		std::setlocale(LC_ALL, "C");
+//		std::setlocale(LC_ALL, "C");
+		std::setlocale(LC_ALL, "zh");
 		std::setlocale(LC_MESSAGES, "");
 	#endif
 	const std::string& intl_dir = get_intl_dir();
@@ -2104,6 +2106,8 @@ static int do_gameloop(int argc, char** argv)
 			should_reload = game_controller::NO_RELOAD_DATA;
 		} else if(res == gui::TUTORIAL) {
 			game.set_tutorial();
+		} else if(res == gui::NEW_GAME){  //added by Jian Fang for new map play mode
+			continue;
 		} else if(res == gui::NEW_CAMPAIGN) {
 			if(game.new_campaign() == false) {
 				continue;
@@ -2130,6 +2134,8 @@ static int do_gameloop(int argc, char** argv)
 			help::help_manager help_manager(&game.game_config(), NULL);
 			help::show_help(game.disp());
 			continue;
+/*
+ * Disable the add-on function for the time being
 		} else if(res == gui::GET_ADDONS) {
 			try {
 				manage_addons(game.disp());
@@ -2137,6 +2143,7 @@ static int do_gameloop(int argc, char** argv)
 				game.reload_changed_game_config();
 			}
 			continue;
+*/
 		} else if(res == gui::BEG_FOR_UPLOAD) {
 			game.show_upload_begging();
 			continue;
