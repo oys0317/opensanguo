@@ -32,7 +32,82 @@ po/LINGUAS
 en_GB zh_CN zh_TW
 }}}
 
-po目录下包括所有信息的国际化版本。Wesnoth国际化的支持是通过[http://www.gnu.org/software/gettext/manual/gettext.html GNU gettext]来实现的。
+po目录下包括所有信息的国际化版本。Wesnoth国际化的支持是通过[http://www.gnu.org/software/gettext/manual/gettext.html GNU gettext]来实现的。po目下有一系列的目录，每个目录相对如一个文本域(Text Domain)，是有C++文件中的{{{GETTEXT_DOMAIN}}}来定义的。
+比如文件src/gui/dialogs/message.cpp中有如下定义：
+
+{{{
+#define GETTEXT_DOMAIN "wesnoth-lib"
+}}}
+
+这表明这个C++文件中的信息都是在po目录下的wesnoth-lib子目录中。看一下这个子目录，就可以看到有下面几个重要文件：
+
+{{{
+wesnoth-lib/
+|-- en_GB.po
+|-- wesnoth-lib.pot
+|-- zh_CN.po
+`-- zh_TW.po
+}}}
+
+其中wesnoth-lib.pot是模板文件，它定义了信息号码msgid和空的对应信息msgstr. 如en_GB.po，zh_CN.po，zh_TW.po分别是真正的国际化信息，这三个文件分别对应如英式英语，中文简体，和中文繁体。
+
+看一个具体的例子加深理解，比如message.cpp中下面的代码用到了信息"Yes"和"No"作标签。
+
+{{{
+  dlg.set_button_visible(tmessage::ok, twidget::VISIBLE);
+  dlg.set_button_caption(tmessage::ok, _("Yes"));
+  dlg.set_button_visible(tmessage::cancel, twidget::VISIBLE);
+  dlg.set_button_caption(tmessage::cancel, _("No"));
+}}}
+
+看一下wesnoth-lib.pot就发现有如下的定义：
+{{{
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+}}}
+
+而en_GB.po中的具体定义为：
+
+{{{
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+}}}
+
+zh_CN.po中的定义是：
+
+{{{
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+}}}
+
+相应的zh_TW.po的定义为：
+
+{{{
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+}}}
+
+看上去一样对吧？ 那是因为简体和繁体没区别。比如下面的信息就是不同的繁体了：
+
+{{{
+msgid "Load Game"
+msgstr "讀取遊戲"
+
+}}}
+
+你也许注意到，在代码中，用{{{_("Yes")}}}来实现国际化字符的调用，其中"Yes"是msgid。这是[http://www.gnu.org/software/gettext/manual/gettext.html GNU Gettext]的一贯做法。
 
 == 主流程 ==
 
