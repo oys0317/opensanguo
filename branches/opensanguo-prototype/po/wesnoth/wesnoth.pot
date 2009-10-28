@@ -8057,6 +8057,9 @@ msgstr ""
 msgid "TitleScreen button^Tutorial"
 msgstr ""
 
+msgid "TitleScreen button^Game"
+msgstr ""
+
 #: src/titlescreen.cpp:423
 msgid "TitleScreen button^Campaign"
 msgstr ""
@@ -8118,6 +8121,9 @@ msgstr ""
 
 #: src/titlescreen.cpp:443
 msgid "Start a new single player campaign"
+msgstr ""
+
+msgid "Start a new single player game"
 msgstr ""
 
 #: src/titlescreen.cpp:444
