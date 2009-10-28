@@ -122,7 +122,7 @@ msgstr "讀取遊戲"
     ......
 }}}
 
-其中{{{N_{}}}}主要是用来标注要国际化的字符，而不直接转换，要到运行时再调用{{{gettext}}}去获取真正的国际化信息。 如上面的例子，字符串是用在初始化Array _button_labels_，当然不能直接替换。所以不能用{{{_()}}}，而需要用到{{{N_()}}}。更多的用法，请参考[http://library.gnome.org/devel/glib/unstable/glib-I18N.html GLib手则]。
+其中{{{N_{}}}}主要是用来标注要国际化的字符，而不直接转换，要到运行时再调用{{{gettext}}}去获取真正的国际化信息。 如上面的例子，字符串是用在初始化Array _button_labels_，当然不能直接替换。所以不能用{{{_()}}}，而需要用到{{{N_()}}}。更多的用法，请参考[http://library.gnome.org/devel/glib/unstable/glib-I18N.html GLib参考资料]。
 
 == 主流程 ==
 
