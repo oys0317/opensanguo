@@ -109,6 +109,21 @@ msgstr "讀取遊戲"
 
 你也许注意到，在代码中，用{{{_("Yes")}}}来实现国际化字符的调用，其中"Yes"是msgid。这是[http://www.gnu.org/software/gettext/manual/gettext.html GNU Gettext]的一贯做法。
 
+有时候，你会发现有的代码用{{{N_()}}}来国际化， 比如在titlescreen.cpp中有如下定义：
+
+{{{
+  static const char* button_labels[] = {
+    N_("TitleScreen button^Tutorial"),
+    N_("TitleScreen button^Campaign"),
+    N_("TitleScreen button^Multiplayer"),
+    N_("TitleScreen button^Load"),
+    N_("TitleScreen button^Add-ons"),
+
+    ......
+}}}
+
+其中{{{N_{}}}}主要是用来标注要国际话的字符，而不直接转换，要到运行时再调用{{{gettext}}}去获取真正的国际化信息。 如上面的例子，字符串是用在初始化Array _button_labels_，当然不能直接替换。所以不能用{{{_()}}}，而需要用到{{{N_()}}}。更多的用法，请参考[http://library.gnome.org/devel/glib/unstable/glib-I18N.html GLib守则]。
+
 == 主流程 ==
 
 游戏的主控文件是src/game.cpp. 主屏幕的文件是src/titlescreen.cpp和src/gui/dialog/title_screen.cpp.
