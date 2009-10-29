@@ -1935,7 +1935,7 @@ static void init_locale() {
 		std::setlocale(LC_ALL, "Chinese");
 	#else
 //		std::setlocale(LC_ALL, "C");
-		std::setlocale(LC_ALL, "zh");
+		std::setlocale(LC_ALL, "zh_CN");
 		std::setlocale(LC_MESSAGES, "");
 	#endif
 	const std::string& intl_dir = get_intl_dir();
