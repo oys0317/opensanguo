@@ -154,7 +154,7 @@ http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.pn
 
 == WML, Lua 脚本 ==
 
-[http://wiki.wesnoth.org/LuaWML LuaWML]
+  * [http://wiki.wesnoth.org/LuaWML LuaWML]
 
 == 音乐 ==
 
