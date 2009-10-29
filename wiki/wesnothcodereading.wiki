@@ -144,8 +144,6 @@ Wesnoth类class的继承关系如下图所示：
 
 http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.png?gda=5oRR9FIAAACTlBM1Dubmc8Sna2xtBhdCD7sMC9uslSV3Pn6dhbfYkglh_2lrmuCwoWKx3olnZveYbdVPrPBVgXglYZeZYISiVeLt2muIgCMmECKmxvZ2j4IeqPHHCwbz-gobneSjMyE&gsc=rbn_8AsAAADRUEjKYwzmWgSj6jAU2K3b
 
-== WML ==
-
 == 地图 ==
 
 == AI ==
@@ -154,7 +152,9 @@ http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.pn
 
 == 战役 ==
 
-== Lua 脚本 ==
+== WML, Lua 脚本 ==
+
+[http://wiki.wesnoth.org/LuaWML LuaWML]
 
 == 音乐 ==
 
