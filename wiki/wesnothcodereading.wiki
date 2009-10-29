@@ -166,11 +166,14 @@ data/core/macros/sound-utils.cfg
 
 == Testing 测试 ==
 
-== Resources资源 ==
+= Resources资源 =
 
+  * [http://wiki.wesnoth.org/DevelopersHome Wesnoth Developers Home]
   * [http://wiki.wesnoth.org/ReferenceWML The Wesnoth Markup Language]
   * [http://wiki.wesnoth.org/LuaWML Lua for WML]
   * [http://forums.wesnoth.org/viewtopic.php?f=21&t=14859 How to easily debug WML]
   * [http://wiki.wesnoth.org/EasyCoding Easy Coding for Wesnoth]
   * [http://forums.wesnoth.org/viewtopic.php?f=10&t=27389 WML semantic structure - parsing]
   * [http://forums.wesnoth.org/viewtopic.php?f=10&t=24511 New AI Design for Wesnoth 1.7]
+  * [http://wiki.wesnoth.org/FormulaAI Wesnoth Formula AI]
+  * [http://wiki.wesnoth.org/FormulaAI_Functions Wesnoth Formula AI Functions]
