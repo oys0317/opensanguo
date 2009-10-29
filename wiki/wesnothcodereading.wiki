@@ -107,7 +107,7 @@ msgstr "讀取遊戲"
 
 }}}
 
-你也许注意到，在代码中，用{{{_("Yes")}}}来实现国际化字符的调用，其中"Yes"是msgid。这是[http://www.gnu.org/software/gettext/manual/gettext.html GNU Gettext]的一贯做法。
+你也许注意到，在代码中，用{{{_("Yes")}}}来实现国际化字符的调用，其中"Yes"是msgid。这是[http://www.gnu.org/software/gettext/manual/gettext.html GNU Gettext]的一贯做法。wesnoth官方网站上也有[http://wiki.wesnoth.org/GettextForWesnothDevelopers 相关的介绍]，不过好像不是最新的。
 
 有时候，你会发现有的代码用{{{N_()}}}来国际化， 比如在titlescreen.cpp中有如下定义：
 
