@@ -124,6 +124,18 @@ msgstr "讀取遊戲"
 
 其中{{{N_{}}}}主要是用来标注要国际化的字符，而不直接转换，要到运行时再调用{{{gettext}}}去获取真正的国际化信息。 如上面的例子，字符串是用在初始化Array _button_labels_，当然不能直接替换。所以不能用{{{_()}}}，而需要用到{{{N_()}}}。更多的用法，请参考[http://library.gnome.org/devel/glib/unstable/glib-I18N.html GLib参考资料]。
 
+此外要注意的是，wesnoth的国际化资源中，即po目录下没有美国英语。相反，wesnoth用msgid来表示美国英语。所以你才会在国际化资源中看到冗长的msgid。如，我们新加入的一个msgid为:
+
+{{{
+msgid ""
+"Open Sanguo relies on volunteers like yourself for feedback.\n"
+"Please visit Open Sanguo Project at,\n  http://code.google.com/p/opensanguo/\n"
+"and join Open Sanguo discussion group to provide your feedback:\n"
+"http://groups.google.com/group/opensanguo-discussion\n"
+}}}
+
+其中多行字符表示他们是串联一起的。当你选用美国英语时，会不作替换，直接显示以上内容的。
+
 == 主流程 ==
 
 游戏的主控文件是src/game.cpp. 主屏幕的文件是src/titlescreen.cpp和src/gui/dialog/title_screen.cpp.
