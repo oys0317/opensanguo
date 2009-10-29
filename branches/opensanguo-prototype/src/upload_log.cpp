@@ -364,7 +364,7 @@ void upload_log::quit(int turn)
 /** Ask user for permission to upload his game-stats. */
 void upload_log_dialog::show_beg_dialog(display& disp)
 {
-	std::string msg = std::string(_("Open Sanguo needs your feedback\n")) + "\n \n";
+	std::string msg = std::string(_("Open Sanguo needs your feedback\nPlease visit Open Sanguo Project at,\n  http://code.google.com/p/opensanguo/\nand join Open Sanguo discussion group to provide your feedback:\nhttp://groups.google.com/group/opensanguo-discussion\n")) + "\n \n";
 	gui::dialog d(disp, _("Help us make Open Sanguo better for you!"), msg, gui::OK_ONLY);
 
 //	d.add_option(_("Enable summary uploads"),

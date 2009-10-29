@@ -90,8 +90,8 @@ void ttitle_screen::pre_show(CVideo& video, twindow& window)
 		variant(_("Version") + std::string(" ") + game_config::revision));
 
 	/**** Set the buttons ****/
-	find_widget<tbutton>(&window, "addons", false).
-			set_callback_mouse_left_click(show_dialog<gui2::taddon_connect>);
+//	find_widget<tbutton>(&window, "addons", false).
+//			set_callback_mouse_left_click(show_dialog<gui2::taddon_connect>);
 
 	// Note changing the language doesn't upate the title screen...
 	find_widget<tbutton>(&window, "language", false).

@@ -8281,7 +8281,12 @@ msgid ""
 "(anonymously) to wesnoth.org.\n"
 msgstr ""
 
-msgid "Open Sanguo needs your feedback\n"
+#msgid "Open Sanguo needs your feedback\n"
+msgid ""
+"Open Sanguo relies on volunteers like yourself for feedback.\n"
+"Please visit Open Sanguo Project at,\n  http://code.google.com/p/opensanguo/\n"
+"and join Open Sanguo discussion group to provide your feedback:\n"
+"http://groups.google.com/group/opensanguo-discussion\n"
 msgstr ""
 
 #: src/upload_log.cpp:368
