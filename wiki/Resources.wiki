@@ -93,6 +93,7 @@
 == Books ==
 
   * The C++ Standard Library - A Tutorial and Reference, 1999
+  * Beyond the C++ Standard Library - An Introduction to Boost, 2005 
   * Pro OGRE 3D Programming, 2006
   * Focus On SDL: The Premier Press Game Development Series, 2002
   * Programming Game AI by Example, 2004
