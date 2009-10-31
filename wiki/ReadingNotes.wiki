@@ -75,3 +75,12 @@ When using {{{scoped_ptr}}} to handle the lifetime of the pimpl class, copying o
 == intrusive_ptr ==
 
 {{{intrusive_ptr}}} is the intrusive analogue to {{{shared_ptr}}}. Sometimes, there's no other choice than using an intrusive, reference-counted smart pointer. {{{intrusive_ptr}}} is different from the other smart pointers because it requires you to provide the reference counter that it manipulates. When {{{intrusive_ptr}}} increments or decrements a reference count on a non-null pointer, it does so by making unqualified calls to the functions {{{intrusive_ptr_add_ref}}} and {{{intrusive_ptr_release}}}, respectively. These functions are responsible for making sure that the reference count is always correct and, if the reference counter drops to zero, to delete the pointer. Therefore, you must overload those functions for your type.
+
+Use intrusive_ptr when
+  * You need to treat this as a smart pointer.
+  * There is existing code that uses or provides an intrusive reference count.
+  * It is imperative that the size of the smart pointer equals the size of a raw pointer.
+
+== weak_ptr ==
+
+A {{{weak_ptr}}} is an observer of a {{{shared_ptr}}}. It does not interfere with the ownership of what a {{{shared_ptr}}} shares. When a {{{shared_ptr}}} that is being observed by a {{{weak_ptr}}} must release its resource, it sets the observing {{{weak_ptr}}}'s pointer to null. That prevents the weak_ptr from holding a dangling pointer. Why would you need a {{{weak_ptr}}}? There are many situations where one needs to observe and use a shared resource without accepting ownership, such as to break cyclic dependencies, to observe a shared resource without assuming ownership of it, or to avoid dangling pointers. It's possible to construct a {{{shared_ptr}}} from a {{{weak_ptr}}}, thereby gaining access to the shared resource.
