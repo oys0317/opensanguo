@@ -63,3 +63,9 @@ fuzzification -> fuzzy rules -> defuzzification
 }}}
 
 One major problem with fuzzy inference systems is that as the complexity of the problem increases, the number of rules required escalates at an alarming rate. In 1997 Combs proposed a system that enables the number of rules to grow linearly with the number of member sets instead of exponentially. A rule base can be defined that contains only one rule per consequent member set. One of the drawbacks with this method is that the changes to the rule base required to accommodate the logic are not intuitive. 
+
+= Beyond The C++ Standard Library: An Introduction to Boost =
+
+== scoped_ptr vs shared_ptr ==
+
+When using {{{scoped_ptr}}} to handle the lifetime of the pimpl class, copying of the outer class is not allowed, because {{{scoped_ptr}}}s are not copyable. This means that to support copying and assignment in such classes, a copy constructor and assignment operator must be defined manually. When using {{{shared_ptr}}} to handle the lifetime of the pimpl, a user-defined copy constructor may not even be needed. Note that the pimpl instance will be shared among the objects of the class, so if there is state that only applies to one instance of the class, a handcrafted copy constructor is still required. The solution is very similar to what we saw for {{{scoped_ptr}}}; just make it a {{{shared_ptr}}}, instead.
