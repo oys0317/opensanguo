@@ -87,3 +87,8 @@ A {{{weak_ptr}}} is an observer of a {{{shared_ptr}}}. It does not interfere wit
 
 When you have a {{{weak_ptr}}} that's observing some resource, you'll eventually want to
 access that resource. To do so, the {{{weak_ptr}}} must be converted to a {{{shared_ptr}}}, because the {{{weak_ptr}}} alone does not allow direct access to the resource. There are two ways of creating a {{{shared_ptr}}} from a {{{weak_ptr}}}: Either pass the {{{weak_ptr}}} to the constructor of {{{shared_ptr}}} or call the {{{weak_ptr}}} member function {{{lock}}}, which returns a {{{shared_ptr}}}. Which to choose depends on whether you consider an empty {{{weak_ptr}}} to be an error or not.
+
+Use weak_ptr to
+  * Break cyclic dependencies
+  * Use a shared resource without sharing ownership
+  * Avoid dangling pointers
