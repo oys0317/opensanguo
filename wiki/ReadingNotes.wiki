@@ -92,3 +92,7 @@ Use weak_ptr to
   * Break cyclic dependencies
   * Use a shared resource without sharing ownership
   * Avoid dangling pointers
+
+== polymorphic_cast ==
+
+Polymorphic conversions in C++ are performed via {{{dynamic_cast}}}. A feature of {{{dynamic_cast}}}, which is sometimes also the cause of erroneous code, is that it behaves differently depending on the type with which it is used. {{{dynamic_cast}}} throws an exception {{{std::bad_cast}}} if the conversion is not possible when used on a reference type. {{{polymorphic_cast}}} is used just like {{{dynamic_cast}}}, except that it always throws a {{{std::bad_cast}}} on failure to convert. Another feature of {{{polymorphic_cast}}} is that it is a function, and can be overloaded, if necessary. As a natural extension to our C++ vocabulary, it makes code clearer and casts less error prone. It should be mentioned that there is no version of {{{polymorphic_cast}}} for reference types. The reason for this is that the implementation would do exactly what {{{dynamic_cast}}} already does, and there is no need for {{{polymorphic_cast}}} to duplicate existing functionality of the C++ language. 
