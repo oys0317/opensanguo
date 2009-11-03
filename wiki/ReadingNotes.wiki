@@ -96,3 +96,22 @@ Use weak_ptr to
 == polymorphic_cast ==
 
 Polymorphic conversions in C++ are performed via {{{dynamic_cast}}}. A feature of {{{dynamic_cast}}}, which is sometimes also the cause of erroneous code, is that it behaves differently depending on the type with which it is used. {{{dynamic_cast}}} throws an exception {{{std::bad_cast}}} if the conversion is not possible when used on a reference type. {{{polymorphic_cast}}} is used just like {{{dynamic_cast}}}, except that it always throws a {{{std::bad_cast}}} on failure to convert. Another feature of {{{polymorphic_cast}}} is that it is a function, and can be overloaded, if necessary. As a natural extension to our C++ vocabulary, it makes code clearer and casts less error prone. It should be mentioned that there is no version of {{{polymorphic_cast}}} for reference types. The reason for this is that the implementation would do exactly what {{{dynamic_cast}}} already does, and there is no need for {{{polymorphic_cast}}} to duplicate existing functionality of the C++ language. 
+
+== numeric_cast ==
+
+{{{numeric_cast}}} offers efficient, range-checked conversions between arithmetic types. For those cases where the destination type can hold all values that the source type can, there is no efficiency penalty for using {{{numeric_cast}}}. It only has impact when the destination type can hold only a subset of the values of the source type. When a conversion fails, {{{numeric_cast}}} signals the failure by throwing an exception of type
+{{{bad_numeric_cast}}}. As there are so many intricate rules governing conversions between numeric types, ensuring correctness is vital.
+
+When to use numeric_cast:
+  * When assigning/comparing unsigned and signed types
+  * When assigning/comparing integral types of different sizes
+  * When assigning a function return type to a numeric variable, to protect against future changes to the function
+
+== lexical_cast ==
+
+{{{lexical_cast}}} is a reusable and reasonably efficient tool for lexical conversions, those between string and other types. With its combination of functionality and elegance, it is a great example of what a creative programmer can do. Rather than implementing small conversion functions whenever the need arises, or worse, implementing that logic directly in other functions, a generic tool like {{{lexical_cast}}} should be used. It helps make the code clearer and allows programmers to focus on solving the problem at hand. 
+
+When to use lexical_cast:
+  * For conversions from string types to numeric types
+  * For conversions from numeric types to string types
+  * For all lexical conversions that are supported by your user-defined types
