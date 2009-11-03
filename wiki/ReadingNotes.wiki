@@ -144,3 +144,11 @@ Use noncopyable when:
 There are not many potent arguments for overloading operator&, but because it is possible, some people do it anyway. When writing code that relies on retrieving the actual address of objects, addressof can help by ensuring that the real address is returned. When writing generic code, there is no way of telling which types will be operated upon, so if the address of parameterized types needs to be taken, use addressof.
 
 Use addressof when you must retrieve the actual address of an object, regardless of the semantics for operator&.
+
+== enable_if ==
+
+The C++ language feature known as SFINAE is important. Without it, a lot of new code would break existing code, and some types of function overloads (and template specializations) would simply not be possible. To directly make use of SFINAE in a controlled way to enable or disable certain functions or types for overload resolution is complicated. It also makes for hard-to-read code. Using {{{boost::enable_if}}} is an elegant way of simultaneously stating that an overload is only eligible when certain conditions apply. The same argument holds for disable_if, which is used to state the opposite that an overload is not applicable if the condition holds true. There is promise of even more practical uses of SFINAE, and this library also serves as a very nice introduction of the topic. The lazy versions, {{{lazy_enable_if}}} and {{{lazy_disable_if}}} are used to avoid instantiating types that may not be available (depending on the valueof the condition).
+
+Use {{{enable_if}}} when:
+  * You need to add or remove a function to the overload set depending on some condition
+  * You need to add or remove a class template specialization from the set of specializations depending on some condition
