@@ -130,3 +130,17 @@ Use {{{BOOST_STATIC_ASSERT}}} when:
 When a dynamically allocated object is deleted, it is imperative that its destructor is called. If the type is incomplete that is, it has been declared but not defined the destructor will probably never be called. This is a potentially disastrous situation, so avoiding it is paramount. For class templates and functions, the risk is greater than for other types, because there's no telling in advance which types will be used with it. When using {{{checked_delete}}} and {{{checked_array_delete}}}, the problem of deleting incomplete types is removed. There is no runtime overhead compared to a direct call to delete, so the extra safety brought forth by {{{checked_delete}}} comes virtually without a price.
 
 Use {{{checked_delete}}} when you need to ensure that types are complete when calling delete.
+
+== noncopyable ==
+
+There are many types for which we need to prohibit copying and copy assignment. However, declaring the copy constructor and copy assignment operator private is often neglected for such types, and responsibility for knowing that copying doesn't make sense is transferred to clients of the type. Even when types ensure that they cannot be copied or assigned, using private copy constructors and copy assignment operators, it isn't always clear to the client that this is the case. Of course, the compiler kindly informs those who try, but it may not be apparent where the error is coming from. Either way, the best we can do is to be explicit about it, and deriving from noncopyable makes a clear statement. It is immediately in view when scanning the declaration of the type. When compiling, an error message almost certainly includes the name noncopyable. And it also saves some typing, which is a killer argument for some.
+
+Use noncopyable when:
+  * Copying and copy assignment of types is not allowed
+  * Prohibition of copying and assignment should be as explicit as possible
+
+== addressof ==
+
+There are not many potent arguments for overloading operator&, but because it is possible, some people do it anyway. When writing code that relies on retrieving the actual address of objects, addressof can help by ensuring that the real address is returned. When writing generic code, there is no way of telling which types will be operated upon, so if the address of parameterized types needs to be taken, use addressof.
+
+Use addressof when you must retrieve the actual address of an object, regardless of the semantics for operator&.
