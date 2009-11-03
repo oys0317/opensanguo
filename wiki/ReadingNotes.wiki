@@ -154,3 +154,8 @@ Use {{{enable_if}}} when:
   * You need to add or remove a class template specialization from the set of specializations depending on some condition
 
 == Regex ==
+
+Boost.Regex is a powerful library so it has not been possible to cover all of it in this chapter. Similarly, the great expressiveness and range of application of regular expressions necessarily means that this chapter offers little more than an introduction to them. These topics could easily fill a separate book. To learn more, study the online documentation for Boost.Regex and pick up a book on regular expressions (consult the
+Bibliography for suggestions). Despite the power of Boost.Regex, and the breadth and depth of regular expressions, even complete neophytes can use regular expressions effectively with this library. For programmers who have selected other programming languages due to C++'s lack of support for regular expressions, welcome home.
+
+Boost.Regex is not the only regular expression library available for C++ programmers, but it is certainly one of the best. It's easy to use and fast as lightning when matching your regular expressions. Use it as often as you can.
