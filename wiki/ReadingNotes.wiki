@@ -76,7 +76,7 @@ When using {{{scoped_ptr}}} to handle the lifetime of the pimpl class, copying o
 
 {{{intrusive_ptr}}} is the intrusive analogue to {{{shared_ptr}}}. Sometimes, there's no other choice than using an intrusive, reference-counted smart pointer. {{{intrusive_ptr}}} is different from the other smart pointers because it requires you to provide the reference counter that it manipulates. When {{{intrusive_ptr}}} increments or decrements a reference count on a non-null pointer, it does so by making unqualified calls to the functions {{{intrusive_ptr_add_ref}}} and {{{intrusive_ptr_release}}}, respectively. These functions are responsible for making sure that the reference count is always correct and, if the reference counter drops to zero, to delete the pointer. Therefore, you must overload those functions for your type.
 
-Use intrusive_ptr when
+Use {{{intrusive_ptr}}} when
   * You need to treat this as a smart pointer.
   * There is existing code that uses or provides an intrusive reference count.
   * It is imperative that the size of the smart pointer equals the size of a raw pointer.
@@ -88,7 +88,7 @@ A {{{weak_ptr}}} is an observer of a {{{shared_ptr}}}. It does not interfere wit
 When you have a {{{weak_ptr}}} that's observing some resource, you'll eventually want to
 access that resource. To do so, the {{{weak_ptr}}} must be converted to a {{{shared_ptr}}}, because the {{{weak_ptr}}} alone does not allow direct access to the resource. There are two ways of creating a {{{shared_ptr}}} from a {{{weak_ptr}}}: Either pass the {{{weak_ptr}}} to the constructor of {{{shared_ptr}}} or call the {{{weak_ptr}}} member function {{{lock}}}, which returns a {{{shared_ptr}}}. Which to choose depends on whether you consider an empty {{{weak_ptr}}} to be an error or not.
 
-Use weak_ptr to
+Use {{{weak_ptr}}} to
   * Break cyclic dependencies
   * Use a shared resource without sharing ownership
   * Avoid dangling pointers
@@ -102,7 +102,7 @@ Polymorphic conversions in C++ are performed via {{{dynamic_cast}}}. A feature o
 {{{numeric_cast}}} offers efficient, range-checked conversions between arithmetic types. For those cases where the destination type can hold all values that the source type can, there is no efficiency penalty for using {{{numeric_cast}}}. It only has impact when the destination type can hold only a subset of the values of the source type. When a conversion fails, {{{numeric_cast}}} signals the failure by throwing an exception of type
 {{{bad_numeric_cast}}}. As there are so many intricate rules governing conversions between numeric types, ensuring correctness is vital.
 
-When to use numeric_cast:
+When to use {{{numeric_cast}}}:
   * When assigning/comparing unsigned and signed types
   * When assigning/comparing integral types of different sizes
   * When assigning a function return type to a numeric variable, to protect against future changes to the function
@@ -111,7 +111,22 @@ When to use numeric_cast:
 
 {{{lexical_cast}}} is a reusable and reasonably efficient tool for lexical conversions, those between string and other types. With its combination of functionality and elegance, it is a great example of what a creative programmer can do. Rather than implementing small conversion functions whenever the need arises, or worse, implementing that logic directly in other functions, a generic tool like {{{lexical_cast}}} should be used. It helps make the code clearer and allows programmers to focus on solving the problem at hand. 
 
-When to use lexical_cast:
+When to use {{{lexical_cast}}}:
   * For conversions from string types to numeric types
   * For conversions from numeric types to string types
   * For all lexical conversions that are supported by your user-defined types
+
+== BOOST_STATIC_ASSERT ==
+
+Static assertions like the ones you've seen here are becoming as common in C++ as their runtime companion assert. This is, at least in part, due to the "metaprogramming revolution," where much of a program's computation is performed at compile time. The only way to express compile time assertions is by having the compiler issue an error. To make the assertions usable, the error messages must convey the necessary information, but that's hard to do portably. This is what {{{BOOST_STATIC_ASSERT}}} does, by providing consistent output for compile time assertions on a wide range of compilers. It can be used at namespace, class, and function, scope.
+
+Use {{{BOOST_STATIC_ASSERT}}} when:
+  * A condition can be expressed at compile time
+  * Requirements on types are expressible at compile time
+  * You need to assert a relation of two or more constant integral values
+
+== checked_delete ==
+
+When a dynamically allocated object is deleted, it is imperative that its destructor is called. If the type is incomplete that is, it has been declared but not defined the destructor will probably never be called. This is a potentially disastrous situation, so avoiding it is paramount. For class templates and functions, the risk is greater than for other types, because there's no telling in advance which types will be used with it. When using {{{checked_delete}}} and {{{checked_array_delete}}}, the problem of deleting incomplete types is removed. There is no runtime overhead compared to a direct call to delete, so the extra safety brought forth by {{{checked_delete}}} comes virtually without a price.
+
+Use {{{checked_delete}}} when you need to ensure that types are complete when calling delete.
