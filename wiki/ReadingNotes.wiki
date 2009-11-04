@@ -171,3 +171,10 @@ Use the Any library when
   * You need to store values of heterogeneous types in containers
   * Storage for unknown types is required
   * Types are being passed through layers that need not know anything about the types
+
+== Variant ==
+
+The fact that discriminated unions are useful in everyday programming should come as no surprise, and the Boost.Variant library does an excellent job of providing efficient and easy-to-use variant types based upon discriminated unions. Because C++ unions aren't terribly useful for many types (they support only built-in types and POD types), the need for something else has been prevalent for a long time. Many attempts at creating discriminated unions have suffered from significant drawbacks. For example, previous attempts usually come with a fixed set of supported types, which seriously impedes maintainability and flexibility.
+
+Boost.Variant avoids this limitation through templates, which theoretically allows creating any variant type. Type-switching code has always been a problem when dealing with discriminated unions; it was necessary to test for the type of the current value before acting, creating maintenance headaches. Boost.Variant offers straightforward value extraction and typesafe visitation, which is a novel approach that elegantly solves that problem. Finally, efficiency has often been a concern with previous attempts, but this
+library addresses that too, by using stack-based storage rather than the heap.
