@@ -159,3 +159,15 @@ Boost.Regex is a powerful library so it has not been possible to cover all of it
 Bibliography for suggestions). Despite the power of Boost.Regex, and the breadth and depth of regular expressions, even complete neophytes can use regular expressions effectively with this library. For programmers who have selected other programming languages due to C++'s lack of support for regular expressions, welcome home.
 
 Boost.Regex is not the only regular expression library available for C++ programmers, but it is certainly one of the best. It's easy to use and fast as lightning when matching your regular expressions. Use it as often as you can.
+
+== Any ==
+
+Discriminated types can contain values of different types and are quite different from indiscriminate (read void*) types. We always depend heavily on type safety in C++, and there are few situations in which we are willing to do without it.
+
+This is for good reasons: Type safety keeps us from making mistakes and improves the performance of our code. So, we avoid indiscriminate types. Still, it is not uncommon to find oneself in need of heterogeneous storage, or to insulate clients from the details of types, or to gain the utmost flexibility at lower levels of a hierarchy. any provides this functionality while maintaining full type safety, and that makes it an excellent
+addition to our toolbox!
+
+Use the Any library when
+  * You need to store values of heterogeneous types in containers
+  * Storage for unknown types is required
+  * Types are being passed through layers that need not know anything about the types
