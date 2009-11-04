@@ -9,5 +9,6 @@
   * stmartin: [http://code.google.com/p/sanguoforciv4/ 三国春秋]项目的负责人。  
   * ancientcc: [http://www.freeors.com/bbs/forumdisplay.php?fid=37 王国战争]的开发者。
   * zhust2003: 武林三国的开发者。
+  * Jie Luo:
 
 = Other Contributors 其他贡献者 =
