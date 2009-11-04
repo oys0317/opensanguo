@@ -162,7 +162,7 @@ Boost.Regex is not the only regular expression library available for C++ program
 
 == Any ==
 
-Discriminated types can contain values of different types and are quite different from indiscriminate (read void*) types. We always depend heavily on type safety in C++, and there are few situations in which we are willing to do without it.
+Discriminated types can contain values of different types and are quite different from indiscriminate (read {{{void*}}}) types. We always depend heavily on type safety in C++, and there are few situations in which we are willing to do without it.
 
 This is for good reasons: Type safety keeps us from making mistakes and improves the performance of our code. So, we avoid indiscriminate types. Still, it is not uncommon to find oneself in need of heterogeneous storage, or to insulate clients from the details of types, or to gain the utmost flexibility at lower levels of a hierarchy. any provides this functionality while maintaining full type safety, and that makes it an excellent
 addition to our toolbox!
