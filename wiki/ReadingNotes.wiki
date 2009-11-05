@@ -210,3 +210,13 @@ Use Function when
 Boost.Function is an important addition to the offerings from the Standard Library. The well-known technique of using function pointers as a callback mechanism is extended to include anything that behaves like a function, including function objects created by binder libraries. Through the use of Boost.Function, it is easy to add state to the callbacks, and to adapt existing classes and member functions to be used as callback functions.
 
 There are several advantages to using Boost.Function rather than function pointers: relaxed requirements on the signature through compatible function objects rather than exact signatures; the possibility to use binders, such as Boost.Bind and Boost.Lambda; the ability to test whether functions are empty that is, that there is no target before attempting to invoke them; and the notion of stateful objects rather than just stateless functions. Each of these advantages favor using Boost.Function over the C-style callbacks that have been prevalent in solving this type of problem. Only when the small additional cost of using Boost.Function compared to function pointers is prohibitive should the function pointer technique be considered.
+
+== Signals ==
+
+Use Signals when
+  * You need robust callbacks
+  * There can be multiple handlers of events
+  * The connection between the signal and the connected slots should be configurable at runtime
+
+That Boost.Signals supersedes old-style callbacks should be blatantly clear by now, and this library is one of the best signals and slots implementations available. The design pattern that the library captures is well known and has been studied for a long time, so the domain is mature. Some programming languages already have such mechanisms available directly in the language, for example, delegates and events in .NET. In C++, the problem is elegantly solved with libraries. Signals and slots are used to separate the trigger mechanism of an event from the code that handles it. This separation decouples subsystems and makes them more comprehensible. It also solves the problem of updating multiple interested parties when important events take place. There are numerous places in a typical program or library where signals and slots are useful. Whether you are writing a GUI framework or an intrusion detection system for a power plant, Signals is ready to take
+care of all your signalling needs. It is easy to learn how to use, yet it also offers the advanced functionality that is required for complex tasks. For example, custom Combiners make it possible to write event mechanisms that are tailor-made for a certain domain.
