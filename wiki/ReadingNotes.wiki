@@ -182,3 +182,12 @@ library addresses that too, by using stack-based storage rather than the heap.
 == Tuple ==
 
 The Tuple library brings the concept of tuples to C++. It is intuitive and concise, and although its primary use seems to be for multiple return value from functions, it is also very useful for creating all sorts of logical groupings such as storing sets of elements (as elements) in Standard Library containers. The alternative for achieving the same level of coherency is to create unique structs for every different return type (groupings), which is not only tedious work, it also removes the possibility of generic solutions for recurring tasks. These problems are alleviated with the use of the Boost.Tuple.
+
+== Bind ==
+
+Use Bind when
+  * You need to bind a call to a free function, and some or all of its arguments
+  * You need to bind a call to a member function, and some or all of its arguments
+  * You need to compose nested function objects
+The existence of a generalized binder is a tremendously useful tool when it comes to writing terse, coherent code. It reduces the number of small function objects created for adapting functions/function objects, and combinations of functions. Although the Standard Library already offers a small part of the functionality found in Boost.Bind, there are significant improvements that make Boost.Bind the better choice in most places. In addition to the simplification of existing features, Bind also offers powerful functional composition features, which provide the programmer with great power without negative effects on maintenance. If you've taken the time to learn about bind1st, bind2nd, ptr_fun, mem_fun_ref, and so forth, you'll have little or no trouble transitioning to Boost.Bind. If you've yet to start using the current binder offerings from the
+C++ Standard Library, I strongly suggest that you start by using Bind, because it is both easier to learn and more powerful.
