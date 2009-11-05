@@ -191,3 +191,11 @@ Use Bind when
   * You need to compose nested function objects
 The existence of a generalized binder is a tremendously useful tool when it comes to writing terse, coherent code. It reduces the number of small function objects created for adapting functions/function objects, and combinations of functions. Although the Standard Library already offers a small part of the functionality found in Boost.Bind, there are significant improvements that make Boost.Bind the better choice in most places. In addition to the simplification of existing features, Bind also offers powerful functional composition features, which provide the programmer with great power without negative effects on maintenance. If you've taken the time to learn about bind1st, bind2nd, ptr_fun, mem_fun_ref, and so forth, you'll have little or no trouble transitioning to Boost.Bind. If you've yet to start using the current binder offerings from the
 C++ Standard Library, I strongly suggest that you start by using Bind, because it is both easier to learn and more powerful.
+
+== Lambda ==
+
+Use Lambda when
+  * You would otherwise create a simple function object
+  * You need to tweak argument order or arity for function calls
+  * You want to create standard-conforming function objects on-the-fly
+  * You need flexible and readable predicates
