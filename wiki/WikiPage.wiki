@@ -2,34 +2,26 @@
 其他可以借鉴/使用的项目
 
 
-
 = 开源游戏项目 =
 
 ==回合战略==
-  # http://wesnoth.org/, Battle for Wesnoth 是目前本项目的根基，拥有很好的扩展性和完善的网络、修改功能。SDL。C++（python脚本支持）。
-
-  # http://www.nongnu.org/lordsawar/, LordsAWar!是战神2（Warlord2）的克隆，2D回合战略，适合作为地图模式（一个格容纳多个集团）。C++。良好的GGZ Gaming Zone支持。
-
-  # http://sourceforge.net/projects/attal/, Attal是一个回合战略游戏，使用类似魔法门英雄无敌系列的战斗系统。C++。
-
-  # http://kralovstvi.sourceforge.net/, 8 Kingdoms是一个3D回合战略游戏，开发较慢。可以作为参考。C++（python脚本支持）。
+  * http://wesnoth.org/, Battle for Wesnoth 是目前本项目的根基，拥有很好的扩展性和完善的网络、修改功能。SDL。C++（python脚本支持）。
+  * http://www.nongnu.org/lordsawar/, LordsAWar!是战神2（Warlord2）的克隆，2D回合战略，适合作为地图模式（一个格容纳多个集团）。C++。良好的GGZ Gaming Zone支持。
+  * http://sourceforge.net/projects/attal/, Attal是一个回合战略游戏，使用类似魔法门英雄无敌系列的战斗系统。C++。
+  * http://kralovstvi.sourceforge.net/, 8 Kingdoms是一个3D回合战略游戏，开发较慢。可以作为参考。C++（python脚本支持）。
 
 
 ==即时战术（半即时）==
 
-  # UFO Alien Invasion, 小团队战术游戏，C++。或许没有参考价值。
+  * UFO Alien Invasion, 小团队战术游戏，C++。或许没有参考价值。
 
 ==即时战略==
 
-  # http://widelands.org, Widelands是一个工人物语1/2的混合物，不过朝着自己的方向发展，慢节奏的资源管理为主的2D即时战略游戏。良好的GGZ Gaming Zone支持。
-
-  # http://springrts.com, Spring是[http://zh.wikipedia.org/wiki/Spring计划 最完善的开源3D即时战略引擎，较为适合作野战界面] OpenGL。C++（Lua脚本支持）。
-
-  # http://www.globulation2.org/, Globulation 2是一个2D即时战略游戏，它的相对特殊之处就是极力弱化微操作，集中在战略层面。SDL、OpenGL。C++。
-
-  # http://wildfiregames.com/0ad/, 0.A.D.是一个要以历史为准的欧洲3D即时战略游戏，较为类似帝国时代3，基本面可以使用。
-
- #  http://glest.org/en/index.php, Glest是一个2005年开始开源的游戏项目，曾获奖，操作类似魔兽争霸3，MOD众多，XML和一系列现存工具使得此游戏易于修改。但是要求高，和本项目无太大关联。C++。很可能没有参考价值。
+  * http://widelands.org, Widelands是一个工人物语1/2的混合物，不过朝着自己的方向发展，慢节奏的资源管理为主的2D即时战略游戏。良好的GGZ Gaming Zone支持。
+  * http://springrts.com, Spring是[http://zh.wikipedia.org/wiki/Spring计划 最完善的开源3D即时战略引擎，较为适合作野战界面] OpenGL。C++（Lua脚本支持）。
+  * http://www.globulation2.org/, Globulation 2是一个2D即时战略游戏，它的相对特殊之处就是极力弱化微操作，集中在战略层面。SDL、OpenGL。C++。
+  * http://wildfiregames.com/0ad/, 0.A.D.是一个要以历史为准的欧洲3D即时战略游戏，较为类似帝国时代3，基本面可以使用。
+  * http://glest.org/en/index.php, Glest是一个2005年开始开源的游戏项目，曾获奖，操作类似魔兽争霸3，MOD众多，XML和一系列现存工具使得此游戏易于修改。但是要求高，和本项目无太大关联。C++。很可能没有参考价值。
 
 = 非开源游戏项目 =
 
@@ -37,15 +29,15 @@
 
 ==即时战略==
 
-  # http://azaremoth.supremedesign.org/, Spring引擎的一个游戏，魔法世界的即时战略。
+  * http://azaremoth.supremedesign.org/, Spring引擎的一个游戏，魔法世界的即时战略。
 
 
 
 = 美工图像资源 =
 
-  # http://opengameart.org/, 开放的游戏艺术资源库
+  * http://opengameart.org/, 开放的游戏艺术资源库
 
 
 = 网络游戏服务 =
 
-  # http://www.ggzgamingzone.org/, GGZ Gaming Zone是一个开源的在线游戏平台。
+  * http://www.ggzgamingzone.org/, GGZ Gaming Zone是一个开源的在线游戏平台。
