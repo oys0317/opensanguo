@@ -24,6 +24,10 @@
   * http://wildfiregames.com/0ad/, 0.A.D.是一个要以历史为准的欧洲3D即时战略游戏，较为类似帝国时代3，基本面可以使用。
   * http://glest.org/en/index.php, Glest是一个2005年开始开源的游戏项目，曾获奖，操作类似魔兽争霸3，MOD众多，XML和一系列现存工具使得此游戏易于修改。但是要求高，和本项目无太大关联。C++。很可能没有参考价值。
 
+== 其他 ==
+
+  * http://openmw.sourceforge.net/jaws/, 是个3D游戏，主要是用OGRE Engine。
+
 = 非开源游戏项目 =
 
 即使并非开源，但仍然是可以不同程度的借鉴
