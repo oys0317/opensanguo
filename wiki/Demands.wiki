@@ -1,4 +1,7 @@
+#summary Requirements设计借鉴思路.
 #labels Phase-Requirements,Phase-Support,Phase-Implementation,Phase-Design
+<wiki:toc max_depth="3" />
+
 个人意见：根据issue25这些要求而制作的游戏——由我们来做只能是庸俗之作，重复造车轮，造个国产车轮。
 
 战略，就是战略，可以连画面都省略。Captain Forever之类 很多纯程序员创作的游戏，没有美工的游戏——为什么三国游戏一定要好美工+旧系统？就好像三国演义对应三国志。 
