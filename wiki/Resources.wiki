@@ -42,6 +42,7 @@
   * [http://www.linuxgames.com/ Linux Games]
   * [http://wiki.wesnoth.cn/index.php Battle for Wesnoth中文Wiki]
   * [http://www.wesnoth.cn/ Battle for Wesnoth中文论坛]
+  * [http://www-cs-students.stanford.edu/~amitp/gameprog.html Amit’s Game Programming Information]
 
 == Open Source Games ==
 
