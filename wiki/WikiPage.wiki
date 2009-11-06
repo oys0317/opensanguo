@@ -26,7 +26,7 @@
 
 == 其他 ==
 
-  * http://openmw.sourceforge.net/jaws/, 是个3D游戏，主要是用OGRE Engine。以及它的[http://groups.google.com/group/openmw?hl=en 讨论组].
+  * http://openmw.sourceforge.net/jaws/, openwm是个3D游戏，主要是用OGRE Engine, 模仿游戏Morrowind。它有不错的[http://groups.google.com/group/openmw?hl=en 讨论组].
 
 = 非开源游戏项目 =
 
