@@ -38,6 +38,7 @@
 
   * [http://gpwiki.org/ Game Programming Wiki]
   * [http://www.devmaster.net/engines/ DevMaster]
+  * [http://www.gamedev.net/ gamedev.net]
   * [http://www.linuxgames.com/ Linux Games]
   * [http://wiki.wesnoth.cn/index.php Battle for Wesnoth中文Wiki]
   * [http://www.wesnoth.cn/ Battle for Wesnoth中文论坛]
