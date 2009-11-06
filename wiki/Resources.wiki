@@ -81,6 +81,10 @@
   * [http://www.scons.org/ SCons]
   * [http://en.wikipedia.org/wiki/SCons SCons Wiki]
 
+== Other Tools ==
+
+  * [http://valgrind.org/ Valgrind] is an award-winning instrumentation framework for building dynamic analysis tools
+
 == Articles ==
 
   * [http://www.ogre3d.org/wiki/index.php/Using_SDL_Input Using SDL Input fo an OGRE project]
