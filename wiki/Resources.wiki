@@ -1,5 +1,6 @@
 #summary Resources游戏编程资源.
 #labels Phase-Support
+<wiki:toc max_depth="3" />
 
 == C/C++ ==
  
@@ -66,6 +67,7 @@
   * [http://www.codeblocks.org/ Code::Blocks]
   * [http://www.kdevelop.org/ KDevelop]
   * [http://projects.gnome.org/anjuta/index.shtml Anjuta]
+  * [http://www.bloodshed.net/devcpp.html Dev-C++]
 
 == Testing ==
 
