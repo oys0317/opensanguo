@@ -26,7 +26,7 @@
 
 == 其他 ==
 
-  * http://openmw.sourceforge.net/jaws/, 是个3D游戏，主要是用OGRE Engine。
+  * http://openmw.sourceforge.net/jaws/, 是个3D游戏，主要是用OGRE Engine。以及它的[http://groups.google.com/group/openmw?hl=en 讨论组].
 
 = 非开源游戏项目 =
 
@@ -35,7 +35,6 @@
 ==即时战略==
 
   * http://azaremoth.supremedesign.org/, Spring引擎的一个游戏，魔法世界的即时战略。
-
 
 
 = 美工图像资源 =
