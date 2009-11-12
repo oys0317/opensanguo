@@ -203,6 +203,8 @@ data/core/macros/sound-utils.cfg
 
 == Testing 测试 ==
 
+似乎Wesnoth用[http://www.boost.org/doc/libs/1_34_0/libs/test/doc/index.html Boost Test Library]来做单元测试。代码在src/tests目录下。这里有一个[http://www.beroux.com/english/articles/boost_unit_testing/ Boost Unit Testing的Tutorial]。
+
 = Resources资源 =
 
   * [http://wiki.wesnoth.org/DevelopersHome Wesnoth Developers Home]
