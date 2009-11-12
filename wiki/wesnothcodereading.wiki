@@ -148,6 +148,7 @@ http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.pn
 
 地图中地形的定义在terrain_translation.cpp如下：
 
+{{{
 const t_terrain OFF_MAP_USER = string_to_number_("_off^_usr");
 
 const t_terrain VOID_TERRAIN = string_to_number_("_s");
@@ -178,6 +179,7 @@ const t_match ALL_FORESTS("F*,*^F*");
 const t_match ALL_HILLS("!,*^V*,!,H*");
 const t_match ALL_MOUNTAINS("!,*^V*,!,M*"); //excluding impassable mountains
 const t_match ALL_SWAMPS("!,*^V*,*^B*,!,S*"); //excluding swamp villages and bridges
+}}}
 
 == AI ==
 
