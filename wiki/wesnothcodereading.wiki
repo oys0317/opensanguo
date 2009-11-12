@@ -146,6 +146,39 @@ http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.pn
 
 == 地图 ==
 
+地图中地形的定义在terrain_translation.cpp如下：
+
+const t_terrain OFF_MAP_USER = string_to_number_("_off^_usr");
+
+const t_terrain VOID_TERRAIN = string_to_number_("_s");
+const t_terrain FOGGED = string_to_number_("_f");
+
+const t_terrain HUMAN_CASTLE = string_to_number_("Ch");
+const t_terrain HUMAN_KEEP = string_to_number_("Kh");
+const t_terrain SHALLOW_WATER = string_to_number_("Ww");
+const t_terrain DEEP_WATER = string_to_number_("Wo");
+const t_terrain GRASS_LAND = string_to_number_("Gg");
+const t_terrain FOREST = string_to_number_("Gg^Ff");
+const t_terrain MOUNTAIN = string_to_number_("Mm");
+const t_terrain HILL = string_to_number_("Hh");
+
+const t_terrain CAVE_WALL = string_to_number_("Xu");
+const t_terrain CAVE = string_to_number_("Uu");
+const t_terrain UNDERGROUND_VILLAGE = string_to_number_("Uu^Vu");
+const t_terrain DWARVEN_CASTLE = string_to_number_("Cud");
+const t_terrain DWARVEN_KEEP = string_to_number_("Kud");
+
+const t_terrain PLUS = string_to_number_("+");
+const t_terrain MINUS = string_to_number_("-");
+const t_terrain NOT = string_to_number_("!");
+const t_terrain STAR = string_to_number_("*");
+const t_terrain BASE = string_to_number_("_bas");
+
+const t_match ALL_FORESTS("F*,*^F*");
+const t_match ALL_HILLS("!,*^V*,!,H*");
+const t_match ALL_MOUNTAINS("!,*^V*,!,M*"); //excluding impassable mountains
+const t_match ALL_SWAMPS("!,*^V*,*^B*,!,S*"); //excluding swamp villages and bridges
+
 == AI ==
 
 == SDL 界面 ==
