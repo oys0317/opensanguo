@@ -190,6 +190,8 @@ const t_match ALL_SWAMPS("!,*^V*,*^B*,!,S*"); //excluding swamp villages and bri
 == WML, Lua 脚本 ==
 
 文件config.hpp定义了如何操作Wesnoth Markup Language (WML)的interface. 
+
+WML的Parser和seralization代码在src/seralization目录下。
  
 == 音乐 ==
 
