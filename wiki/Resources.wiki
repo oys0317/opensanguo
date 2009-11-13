@@ -27,6 +27,7 @@
   * [http://irrlicht.sourceforge.net/ Irrlicht]
   * [http://www.crystalspace3d.org/main/Main_Page Crystal Space]
   * [http://www.panda3d.org/ Panda3D]
+  * [http://springrts.com/wiki/Games Spring Engine]
 
 == Modeling ==
   
