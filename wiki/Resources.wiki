@@ -10,6 +10,7 @@
   * [http://en.wikipedia.org/wiki/Dependency_injection Dependency injection Frameworks including C++]
   * [http://www.boost.org/ Boost C++ Libraries]
   * [http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller#C.2B.2B Model–view–controller for C++]
+  * [http://users.cis.fiu.edu/~weiss/adspc++2/code/ Source Code for Data Structures and Problem Solving with C++, Second Edition]
 
 == Script Languages ==
 
