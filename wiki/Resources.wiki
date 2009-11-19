@@ -30,6 +30,7 @@
   * [http://www.crystalspace3d.org/main/Main_Page Crystal Space]
   * [http://www.panda3d.org/ Panda3D]
   * [http://springrts.com/wiki/Games Spring Engine]
+  * [http://www.cs.ualberta.ca/~mburo/orts/ ORTS - A Free Software RTS Game Engin]
 
 == Modeling ==
   
@@ -55,6 +56,7 @@
   * [http://glest.org/en/index.php Glest]
   * [http://www.wesnoth.org/ The Battle for Wesnoth]
   * [http://freeciv.wikia.com/wiki/Main_Page FreeCiv]
+  * [http://os.wildfiregames.com/ a free, cross-platform, under-development, 3D, historically-based, real-time strategy game]
   * [http://blog.taragana.com/index.php/archive/top-10-free-linux-games-in-2009/ Top 10 Free Linux Games in 2009]
   * [http://sathyasays.com/2008/01/12/25-top-3d-linux-games/ 25 Top 3D Linux Games]
   * [http://wesnoth.cn/viewthread.php?tid=64&highlight= Linux优秀游戏收集 2007-11-9] 
