@@ -1,5 +1,6 @@
 #summary Announcements项目公告.
 #labels Phase-Requirements
+<wiki:toc max_depth="3" />
 
 = Announcements 项目公告 =
 
