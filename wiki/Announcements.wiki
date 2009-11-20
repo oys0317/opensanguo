@@ -2,3 +2,15 @@
 #labels Phase-Requirements
 
 = Announcements 项目公告 =
+
+== IRC频道#opensanguo开通了== 
+
+为了便于我们交流，我们在[http://freenode.net freenode.net]注册了一个IRC频道{{{#opensanguo}}}。
+
+你可以用IRC客户端来进入IRC聊天室，比如[http://www.ircreviews.org/clients/platforms-windows.html windows客户端], 在Linux系统上，你可以用[http://xchat.org/ xchat]，或者在Firefox中用[https://addons.mozilla.org/en-US/firefox/addon/16 ChatZilla]。 如果你在防火墙之后，你可以用一些web client, 比如[http://webchat.freenode.net/ freenode的webchat]。 
+
+你或许想注册你的用户名，请参考[http://freenode.net/faq.shtml#nicksetup 有关文档]。如果你对IRC不熟悉，可以看看[http://www.ircbeginner.com/ircinfo/ircc-commands.html 基本IRC命令]，或者用以下命名来获取在线帮助:
+
+{{{
+/help topic
+}}}
