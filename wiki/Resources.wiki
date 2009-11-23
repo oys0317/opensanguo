@@ -103,6 +103,9 @@
   * [http://www.policyalmanac.org/games/aStarTutorial.htm A* Pathfinding for Beginners]
   * [http://en.wikipedia.org/wiki/A*_search_algorithm A* Search Algorithm]
   * [http://schneide.wordpress.com/2008/09/29/using-hudson-for-ccmakecppunit/ Using Hudson for C++/CMake/CppUnit]
+  * [http://www.gamedev.net/reference/programming/features/lua/ An introduction to Lua]
+  * [http://www.computerworld.com.au/index.php?q=article/260022/-z_programming_languages_lua&fp=4194304&fpid=1 The A-Z of Programming Languages: Lua]
+  * [http://www.thecodecube.net/?topic=685 Advanced Lua- Part III]
 
 == Books ==
 
