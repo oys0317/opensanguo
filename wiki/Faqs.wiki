@@ -25,8 +25,7 @@ tar jxvf wesnoth-1.6.4.tar.bz2
 Go to the wesnoth-1.6.4 source directory and run the following commands to build Wesnoth:
 
 {{{
-cmake .
-make
+scons
 }}}
 
 If you want to rebuild the RPM from source, please read [http://hacktux.com/fedora/source/rpm the guide].
