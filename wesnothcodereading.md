@@ -1,0 +1,216 @@
+
+
+# Wesnoth代码 #
+
+请下载Wesnoth 1.7.7代码
+
+http://www.wesnoth.org/
+
+或下载我们的清理版从
+
+```
+http://opensanguo.googlecode.com/svn/branches/wesnoth-1.7.7-cleanup
+```
+
+# 代码研究 #
+
+## Build系统 ##
+
+发现Wesnoth支持GNU make, cmake, 和SCons。
+
+## 国际化支持 i18n ##
+
+在代码项目的目录
+```
+po/LINGUAS
+```
+包括所支持的语言，如清除版为
+
+```
+en_GB zh_CN zh_TW
+```
+
+po目录下包括所有信息的国际化版本。Wesnoth国际化的支持是通过[GNU gettext](http://www.gnu.org/software/gettext/manual/gettext.html)来实现的。po目下有一系列的目录，每个目录相对如一个文本域(Text Domain)，是有C++文件中的`GETTEXT_DOMAIN`来定义的。
+比如文件src/gui/dialogs/message.cpp中有如下定义：
+
+```
+#define GETTEXT_DOMAIN "wesnoth-lib"
+```
+
+这表明这个C++文件中的信息都是在po目录下的wesnoth-lib子目录中。看一下这个子目录，就可以看到有下面几个重要文件：
+
+```
+wesnoth-lib/
+|-- en_GB.po
+|-- wesnoth-lib.pot
+|-- zh_CN.po
+`-- zh_TW.po
+```
+
+其中wesnoth-lib.pot是模板文件，它定义了信息号码msgid和空的对应信息msgstr. 如en\_GB.po，zh\_CN.po，zh\_TW.po分别是真正的国际化信息，这三个文件分别对应如英式英语，中文简体，和中文繁体。
+
+看一个具体的例子加深理解，比如message.cpp中下面的代码用到了信息"Yes"和"No"作标签。
+
+```
+  dlg.set_button_visible(tmessage::ok, twidget::VISIBLE);
+  dlg.set_button_caption(tmessage::ok, _("Yes"));
+  dlg.set_button_visible(tmessage::cancel, twidget::VISIBLE);
+  dlg.set_button_caption(tmessage::cancel, _("No"));
+```
+
+看一下wesnoth-lib.pot就发现有如下的定义：
+```
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+```
+
+而en\_GB.po中的具体定义为：
+
+```
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+```
+
+zh\_CN.po中的定义是：
+
+```
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+```
+
+相应的zh\_TW.po的定义为：
+
+```
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+```
+
+看上去一样对吧？ 那是因为简体和繁体没区别。比如下面的信息就是不同的繁体了：
+
+```
+msgid "Load Game"
+msgstr "讀取遊戲"
+
+```
+
+你也许注意到，在代码中，用`_("Yes")`来实现国际化字符的调用，其中"Yes"是msgid。这是[GNU Gettext](http://www.gnu.org/software/gettext/manual/gettext.html)的一贯做法。wesnoth官方网站上也有[相关的介绍](http://wiki.wesnoth.org/GettextForWesnothDevelopers)，不过好像不是最新的。
+
+有时候，你会发现有的代码用`N_()`来国际化， 比如在titlescreen.cpp中有如下定义：
+
+```
+  static const char* button_labels[] = {
+    N_("TitleScreen button^Tutorial"),
+    N_("TitleScreen button^Campaign"),
+    N_("TitleScreen button^Multiplayer"),
+    N_("TitleScreen button^Load"),
+    N_("TitleScreen button^Add-ons"),
+
+    ......
+```
+
+其中`N_{`}主要是用来标注要国际化的字符，而不直接转换，要到运行时再调用`gettext`去获取真正的国际化信息。 如上面的例子，字符串是用在初始化Array _button\_labels_，当然不能直接替换。所以不能用`_()`，而需要用到`N_()`。更多的用法，请参考[GLib参考资料](http://library.gnome.org/devel/glib/unstable/glib-I18N.html)。
+
+此外要注意的是，wesnoth的国际化资源中，即po目录下没有美国英语。相反，wesnoth用msgid来表示美国英语。所以你才会在国际化资源中看到冗长的msgid。如，我们新加入的一个msgid为:
+
+```
+msgid ""
+"Open Sanguo relies on volunteers like yourself for feedback."
+"Please visit Open Sanguo Project at,  http://code.google.com/p/opensanguo/ "
+"and join Open Sanguo discussion group to provide your feedback:"
+"  http://groups.google.com/group/opensanguo-discussion\n"
+```
+
+其中多行字符表示他们是串联一起的。当你选用美国英语时，会不作替换，直接显示以上内容的。
+
+## 主流程 ##
+
+游戏的主控文件是src/game.cpp. 主屏幕的文件是src/titlescreen.cpp和src/gui/dialog/title\_screen.cpp.
+
+Wesnoth类class的继承关系如下图所示：
+
+http://opensanguo-discussion.googlegroups.com/web/Wesnoth_inherit__graph__561.png?gda=5oRR9FIAAACTlBM1Dubmc8Sna2xtBhdCD7sMC9uslSV3Pn6dhbfYkglh_2lrmuCwoWKx3olnZveYbdVPrPBVgXglYZeZYISiVeLt2muIgCMmECKmxvZ2j4IeqPHHCwbz-gobneSjMyE&gsc=rbn_8AsAAADRUEjKYwzmWgSj6jAU2K3b
+
+## 地图 ##
+
+地图中地形的定义在terrain\_translation.cpp如下：
+
+```
+const t_terrain OFF_MAP_USER = string_to_number_("_off^_usr");
+
+const t_terrain VOID_TERRAIN = string_to_number_("_s");
+const t_terrain FOGGED = string_to_number_("_f");
+
+const t_terrain HUMAN_CASTLE = string_to_number_("Ch");
+const t_terrain HUMAN_KEEP = string_to_number_("Kh");
+const t_terrain SHALLOW_WATER = string_to_number_("Ww");
+const t_terrain DEEP_WATER = string_to_number_("Wo");
+const t_terrain GRASS_LAND = string_to_number_("Gg");
+const t_terrain FOREST = string_to_number_("Gg^Ff");
+const t_terrain MOUNTAIN = string_to_number_("Mm");
+const t_terrain HILL = string_to_number_("Hh");
+
+const t_terrain CAVE_WALL = string_to_number_("Xu");
+const t_terrain CAVE = string_to_number_("Uu");
+const t_terrain UNDERGROUND_VILLAGE = string_to_number_("Uu^Vu");
+const t_terrain DWARVEN_CASTLE = string_to_number_("Cud");
+const t_terrain DWARVEN_KEEP = string_to_number_("Kud");
+
+const t_terrain PLUS = string_to_number_("+");
+const t_terrain MINUS = string_to_number_("-");
+const t_terrain NOT = string_to_number_("!");
+const t_terrain STAR = string_to_number_("*");
+const t_terrain BASE = string_to_number_("_bas");
+
+const t_match ALL_FORESTS("F*,*^F*");
+const t_match ALL_HILLS("!,*^V*,!,H*");
+const t_match ALL_MOUNTAINS("!,*^V*,!,M*"); //excluding impassable mountains
+const t_match ALL_SWAMPS("!,*^V*,*^B*,!,S*"); //excluding swamp villages and bridges
+```
+
+## AI ##
+
+## SDL 界面 ##
+
+## 战役 ##
+
+## WML, Lua 脚本 ##
+
+文件config.hpp定义了如何操作Wesnoth Markup Language (WML)的interface.
+
+WML的Parser和seralization代码在src/seralization目录下。
+
+## 音乐 ##
+
+配置文件在：
+
+```
+data/core/macros/sound-utils.cfg
+```
+
+## Testing 测试 ##
+
+似乎Wesnoth用[Boost Test Library](http://www.boost.org/doc/libs/1_34_0/libs/test/doc/index.html)来做单元测试。代码在src/tests目录下。这里有一个[Boost Unit Testing的Tutorial](http://www.beroux.com/english/articles/boost_unit_testing/)。
+
+# Resources资源 #
+
+  * [Wesnoth Developers Home](http://wiki.wesnoth.org/DevelopersHome)
+  * [The Wesnoth Markup Language](http://wiki.wesnoth.org/ReferenceWML)
+  * [Lua for WML](http://wiki.wesnoth.org/LuaWML)
+  * [How to easily debug WML](http://forums.wesnoth.org/viewtopic.php?f=21&t=14859)
+  * [Easy Coding for Wesnoth](http://wiki.wesnoth.org/EasyCoding)
+  * [WML semantic structure - parsing](http://forums.wesnoth.org/viewtopic.php?f=10&t=27389)
+  * [New AI Design for Wesnoth 1.7](http://forums.wesnoth.org/viewtopic.php?f=10&t=24511)
+  * [Wesnoth Formula AI](http://wiki.wesnoth.org/FormulaAI)
+  * [Wesnoth Formula AI Functions](http://wiki.wesnoth.org/FormulaAI_Functions)

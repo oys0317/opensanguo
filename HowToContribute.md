@@ -1,0 +1,27 @@
+# How to Contribute to Open Sanguo如何为开放三国作贡献 #
+
+## 队伍建设 ##
+
+如果我们的项目能坚持发展下去，我们至少应该有下面的队伍：
+
+  * Management board（整个项目管理）
+  * Development team（开发队伍）
+  * Artwork and Graphics team（美工）
+  * Music team （音乐）
+  * QA team （测试）
+  * Build and Release team （软件包装和发行）
+  * Documentation team （文档）
+  * Evangelism Team （宣传）
+
+## 如何贡献 ##
+
+本项目刚刚起步，欢迎感兴趣的志愿者加入开发队伍，包括设计，开发，美工，测试，文档和其他的方面的人才。我们欢迎以下的贡献：
+
+  * 参加[Open Sanguo讨论组](http://groups.google.com/group/opensanguo-discussion), 积极参与讨论。
+  * 贡献三国人物的图像，png格式。
+  * 帮助我们用Wesnoth的地图编辑器编辑三国地图。
+  * 提供三国历史有关资源：如军制，人物，地理，史话等。
+  * 等我们发布游戏后，下载我们的游戏，试玩，并提宝贵意见。
+  * 提供三国游戏设计思想。
+  * 参与游戏的开发，如设计，开发，美工，音乐，测试，文档等等。
+  * 帮助宣传开放三国游戏。

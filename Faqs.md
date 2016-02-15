@@ -1,0 +1,116 @@
+
+
+## How to build Wesnoth from source ##
+
+Download wesnoth from [fedora update site](http://www.ua.kernel.org/pub/mirrors/fedora/updates/11/SRPMS/) and run
+
+```
+rpm -ivh wesnoth-1.6.4-1.fc11.src.rpm
+```
+
+The source should be installed on rpmbuild subdirectory in home directory. To build Wesnoth from source, you need to install couple dependencies.
+
+```
+yum install SDL_mixer SDL_mixer-devel SDL_image SDL_image-devel SDL_net SDL_net-devel SDL_sound SDL_sound-devel SDL_ttf SDL_ttf-devel SDL_gfx SDL_gfx-devel fribidi fribidi-devel lua lua-devel
+```
+
+Then go to rpmbuild/SOURCES/ and unpack wesnoth-1.6.4.tar.bz2.
+
+```
+tar jxvf wesnoth-1.6.4.tar.bz2 
+```
+
+Go to the wesnoth-1.6.4 source directory and run the following commands to build Wesnoth:
+
+```
+scons
+```
+
+or
+
+```
+cmake .
+make
+```
+
+If you want to rebuild the RPM from source, please read [the guide](http://hacktux.com/fedora/source/rpm).
+
+## How to Generate CodeBlocks Project Files from Wesnoth Source ##
+
+cmake manual:
+
+```
+NAME
+         cmake - Cross-Platform Makefile Generator.
+
+USAGE
+         cmake [options] <path-to-source>
+         cmake [options] <path-to-existing-build>
+OPTIONS
+       -C <initial-cache>
+              Pre-load a script to populate the cache.
+       -D <var>:<type>=<value>
+              Create a cmake cache entry.
+       -U <globbing_expr>
+              Remove matching entries from CMake cache.
+       -G <generator-name>
+              Specify a makefile generator.
+       -Wno-dev
+              Suppress developer warnings.
+       -Wdev  Enable developer warnings.
+       -E     CMake command mode.
+       -i     Run in wizard mode.
+       -L[A][H]
+              List non-advanced cached variables.
+       -N     View mode only.
+       -P <file>
+              Process script mode.
+GENERATORS
+       The following generators are available on this platform:
+
+       Unix Makefiles
+              Generates standard UNIX makefiles.
+       CodeBlocks - Unix Makefiles
+              Generates CodeBlocks project files.
+       Eclipse CDT4 - Unix Makefiles
+              Generates Eclipse CDT 4.0 project files.
+       KDevelop3
+              Generates KDevelop 3 project files.
+       KDevelop3 - Unix Makefiles
+              Generates KDevelop 3 project files.
+
+```
+
+For example, the following command creates the CodeBlocks project files for Linux.
+
+```
+cmake -G "CodeBlocks - Unix Makefiles"  .
+```
+
+## How to Install Blender 3D Modeling Tool in Linux ##
+
+```
+yum install blender blenderplayer -y
+```
+
+## How to Get Wesnoth Trunk Code ##
+
+Checkout over SVN protocol (TCP 3690):
+
+```
+svn co svn://svn.gna.org/svn/wesnoth/trunk wesnoth
+```
+
+Checkout over http:
+
+```
+svn co http://svn.gna.org/svn/wesnoth/trunk wesnoth
+```
+
+## How to compile Wesnoth on Windows with MSVC 2008 ##
+
+http://forums.wesnoth.org/viewtopic.php?f=5&t=24879
+
+## How to compile Wesnoth on Windows with Dev-Cpp, Code::Blocks ##
+
+http://forums.wesnoth.org/viewtopic.php?f=5&t=18877

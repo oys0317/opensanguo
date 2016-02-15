@@ -1,0 +1,220 @@
+
+
+# Programming Game AI by Example #
+
+## The Steering Behaviors ##
+
+  * _Seek_: The seek steering behavior returns a force that directs an agent toward a target position.
+  * _Flee_: Flee is the opposite of seek. Instead of producing a steering force to steer the agent toward a target position, flee creates a force that steers the agent away.
+  * _Arrive_: Arrive is a behavior that steers the agent in such a way it decelerates onto the target position.
+  * _Pursuit_: Pursuit behavior is useful when an agent is required to intercept a moving target.
+  * _Evade_: Evade is almost the same as pursuit except that this time the evader flees from the estimated future position.
+  * _Wander_: It's designed to produce a steering force that will give the impression of a random walk through the agent's environment.
+  * _Obstacle Avoidance_: Obstacle avoidance is a behavior that steers a vehicle to avoid obstacles lying in its path.
+  * _Wall Avoidance_: A wall is a line segment (in 3D, a polygon) with a normal pointing in the direction it is facing. Wall avoidance steers to avoid potential collisions with a wall. It does this by projecting three "feelers" out in front of the vehicle and testing to see if any of them intersect with any walls in the game world.
+  * _Interpose_: Interpose returns a steering force that moves a vehicle to the midpoint of the imaginary line connecting two other agents (or points in space, or of an agent and a point).
+  * _Hide_: Hide attempts to position a vehicle so that an obstacle is always between itself and the agent — the hunter — it's trying to hide from. You can use this behavior not only for situations where you require an NPC to hide from the player — like find cover when fired at — but also in situations where you would like an NPC to sneak up on a player.
+  * _Path Following_: Path following creates a steering force that moves a vehicle along a series of waypoints forming a path. Sometimes paths have a start and end point, and other times they loop back around on themselves forming a never-ending, closed path.
+  * _Offset Pursuit_: Offset pursuit calculates the steering force required to keep a vehicle positioned at a specified offset from a target vehicle. This is particularly useful for creating formations.
+  * _Group Behaviors_: Group behaviors are steering behaviors that take into consideration some or all of the other vehicles in the game world. To determine the steering force for a group behavior, a vehicle will consider all other vehicles within a circular area of predefined size — known as the neighborhood radius — centered on the vehicle.
+  * _Separation_: Separation creates a force that steers a vehicle away from those in its neighborhood region. When applied to a number of vehicles, they will spread out, trying to maximize their distance from every other vehicle.
+  * _Alignment_: Alignment attempts to keep a vehicle's heading aligned with its neighbors. The force is calculated by first iterating through all the neighbors and averaging their heading vectors. This value is the desired heading, so we just subtract the vehicle's heading to get the steering force.
+  * _Cohesion_: Cohesion produces a steering force that moves a vehicle toward the center of mass of its neighbors. Use this force to keep a group of vehicles together.
+  * _Flocking_: Flocking is a beautiful demonstration of what has become known as emergent behavior. Emergent behavior is behavior that looks complex and/or purposeful to the observer but is actually derived spontaneously from fairly simple rules. The lower-level entities following the rules have no idea of the bigger picture; they are only aware of themselves and maybe a few of their neighbors. Flocking is a combination of the three previously described group behaviors: separation, alignment, and cohesion.
+
+## The movement of an autonomous agent ##
+
+The movement of an autonomous agent can be broken down into three layers:
+  * Action Selection: This is the part of the agent's behavior responsible for choosing its goals and deciding what plan to follow. It is the part that says "go here" and "do A, B, and then C."
+  * This layer is responsible for calculating the desired trajectories required to satisfy the goals and plans set by the action selection layer.
+  * Locomotion: The bottom layer, locomotion, represents the more mechanical aspects of an agent's movement. It is the how of traveling from A to B.
+
+## Tiered AI ##
+
+This type of AI is used in all sorts of computer games. You will often find tiered AI in real-time strategy (RTS) games where the enemy AI is commonly implemented in several layers
+at, say, the unit, troop, and commander levels.
+
+## Navigation Graph ##
+
+  * _Points of Visibility_: A points of visibility (POV) navigation graph is created by placing graph nodes, usually by hand, at important points in the environment such that each graph node has line of sight to at least one other. Positioned carefully, the graph nodes will make a graph connecting all the important areas in the world geometry.
+  * _Expanded Geometry_: If a game environment is constructed from polygons it's possible to use the information present in those shapes to automatically create a POV graph, which, for large maps can be a real time-saver. This is achieved by first expanding the polygons by an amount proportional to the bounding radius of the game agents.
+  * _NavMesh_: One approach growing in popularity with game developers is to use a network of convex polygons, called a navmesh, to describe the walkable areas of a game environment. A convex polygon has the valuable property that it allows unobstructed travel from any point in the polygon to any other. This is useful because it enables an environment to be represented using a graph where each node represents a convex space (instead of a point).
+
+## Goal-Driven Agent Behavior ##
+
+Instead of a finite state machine-based architecture, an agent's behavior is defined as a collection of hierarchical goals. Goals are either atomic or composite in nature. Atomic goals define a single task, behavior, or action, such as seek to position or reload weapon, whereas composite goals are comprised of several subgoals, which in turn
+may be either atomic or composite, thereby defining a nested hierarchy. Composites usually describe more complex tasks than their atomic brethren such as build weapons factory or retreat and find cover. Both types of goals are able to monitor their status and have the capability to replan if they fail.
+
+This hierarchical architecture provides the AI programmer with an intuitive mechanism for defining agent behavior because it shares many similarities with the human thought process. Humans select high-level abstract goals based upon their needs and desires and then recursively decompose them into a plan of action that can be followed.
+
+One great thing about a hierarchical goal-based arbitration design is that extra features are provided with little additional effort from the programmer. Personality is one good example. Because the desirability scores are constrained to the same range, it's a simple matter to create agents with different personality traits by multiplying each score with a constant that biases it in the required direction.
+
+The stack-like (LIFO) nature of composite goals automatically endows agents with a memory, enabling them to temporarily change behavior by pushing a new goal (or goals) onto the front of the current goal's subgoal list. As soon as the new goal is satisfied it will popped from the list and the agent will resume whatever it was doing previously. This is a very powerful feature that can be exploited in many different ways. For example:
+Automatic Resuming of Interrupted Activities, Negotiating Special Path Obstacles, Command Queuing, and Using the Queue to Script Behavior.
+
+## Fuzzy Logic ##
+
+Fuzzy logic, invented by a man named _Lotfi Zadeh_ in the mid-sixties, enables a computer to reason about linguistic terms and rules in a way similar to humans. Concepts like "far" or "slightly" are not represented by discrete intervals, but by fuzzy sets, enabling values to be assigned to sets to a matter of a degree — a process called fuzzification. Using fuzzified values computers are able to interpret linguistic rules and produce an output that may remain fuzzy or — more commonly, especially in video games — can be defuzzified to provide a crisp value. This is known as fuzzy rule-based inference, and is one of the most popular uses of fuzzy logic.
+
+```
+fuzzification -> fuzzy rules -> defuzzification
+```
+
+One major problem with fuzzy inference systems is that as the complexity of the problem increases, the number of rules required escalates at an alarming rate. In 1997 Combs proposed a system that enables the number of rules to grow linearly with the number of member sets instead of exponentially. A rule base can be defined that contains only one rule per consequent member set. One of the drawbacks with this method is that the changes to the rule base required to accommodate the logic are not intuitive.
+
+# Beyond The C++ Standard Library: An Introduction to Boost #
+
+## scoped\_ptr vs shared\_ptr ##
+
+When using `scoped_ptr` to handle the lifetime of the pimpl class, copying of the outer class is not allowed, because `scoped_ptr`s are not copyable. This means that to support copying and assignment in such classes, a copy constructor and assignment operator must be defined manually. When using `shared_ptr` to handle the lifetime of the pimpl, a user-defined copy constructor may not even be needed. Note that the pimpl instance will be shared among the objects of the class, so if there is state that only applies to one instance of the class, a handcrafted copy constructor is still required. The solution is very similar to what we saw for `scoped_ptr`; just make it a `shared_ptr`, instead.
+
+`shared_array` is a smart pointer that enables shared ownership of arrays. It is to `shared_ptr` what `scoped_array` is to `scoped_ptr`. `shared_array` differs from `shared_ptr` mainly in that it is used with arrays rather than a single object.
+
+## intrusive\_ptr ##
+
+`intrusive_ptr` is the intrusive analogue to `shared_ptr`. Sometimes, there's no other choice than using an intrusive, reference-counted smart pointer. `intrusive_ptr` is different from the other smart pointers because it requires you to provide the reference counter that it manipulates. When `intrusive_ptr` increments or decrements a reference count on a non-null pointer, it does so by making unqualified calls to the functions `intrusive_ptr_add_ref` and `intrusive_ptr_release`, respectively. These functions are responsible for making sure that the reference count is always correct and, if the reference counter drops to zero, to delete the pointer. Therefore, you must overload those functions for your type.
+
+Use `intrusive_ptr` when
+  * You need to treat this as a smart pointer.
+  * There is existing code that uses or provides an intrusive reference count.
+  * It is imperative that the size of the smart pointer equals the size of a raw pointer.
+
+## weak\_ptr ##
+
+A `weak_ptr` is an observer of a `shared_ptr`. It does not interfere with the ownership of what a `shared_ptr` shares. When a `shared_ptr` that is being observed by a `weak_ptr` must release its resource, it sets the observing `weak_ptr`'s pointer to null. That prevents the weak\_ptr from holding a dangling pointer. Why would you need a `weak_ptr`? There are many situations where one needs to observe and use a shared resource without accepting ownership, such as to break cyclic dependencies, to observe a shared resource without assuming ownership of it, or to avoid dangling pointers. It's possible to construct a `shared_ptr` from a `weak_ptr`, thereby gaining access to the shared resource.
+
+When you have a `weak_ptr` that's observing some resource, you'll eventually want to
+access that resource. To do so, the `weak_ptr` must be converted to a `shared_ptr`, because the `weak_ptr` alone does not allow direct access to the resource. There are two ways of creating a `shared_ptr` from a `weak_ptr`: Either pass the `weak_ptr` to the constructor of `shared_ptr` or call the `weak_ptr` member function `lock`, which returns a `shared_ptr`. Which to choose depends on whether you consider an empty `weak_ptr` to be an error or not.
+
+Use `weak_ptr` to
+  * Break cyclic dependencies
+  * Use a shared resource without sharing ownership
+  * Avoid dangling pointers
+
+## polymorphic\_cast ##
+
+Polymorphic conversions in C++ are performed via `dynamic_cast`. A feature of `dynamic_cast`, which is sometimes also the cause of erroneous code, is that it behaves differently depending on the type with which it is used. `dynamic_cast` throws an exception `std::bad_cast` if the conversion is not possible when used on a reference type. `polymorphic_cast` is used just like `dynamic_cast`, except that it always throws a `std::bad_cast` on failure to convert. Another feature of `polymorphic_cast` is that it is a function, and can be overloaded, if necessary. As a natural extension to our C++ vocabulary, it makes code clearer and casts less error prone. It should be mentioned that there is no version of `polymorphic_cast` for reference types. The reason for this is that the implementation would do exactly what `dynamic_cast` already does, and there is no need for `polymorphic_cast` to duplicate existing functionality of the C++ language.
+
+## numeric\_cast ##
+
+`numeric_cast` offers efficient, range-checked conversions between arithmetic types. For those cases where the destination type can hold all values that the source type can, there is no efficiency penalty for using `numeric_cast`. It only has impact when the destination type can hold only a subset of the values of the source type. When a conversion fails, `numeric_cast` signals the failure by throwing an exception of type
+`bad_numeric_cast`. As there are so many intricate rules governing conversions between numeric types, ensuring correctness is vital.
+
+When to use `numeric_cast`:
+  * When assigning/comparing unsigned and signed types
+  * When assigning/comparing integral types of different sizes
+  * When assigning a function return type to a numeric variable, to protect against future changes to the function
+
+## lexical\_cast ##
+
+`lexical_cast` is a reusable and reasonably efficient tool for lexical conversions, those between string and other types. With its combination of functionality and elegance, it is a great example of what a creative programmer can do. Rather than implementing small conversion functions whenever the need arises, or worse, implementing that logic directly in other functions, a generic tool like `lexical_cast` should be used. It helps make the code clearer and allows programmers to focus on solving the problem at hand.
+
+When to use `lexical_cast`:
+  * For conversions from string types to numeric types
+  * For conversions from numeric types to string types
+  * For all lexical conversions that are supported by your user-defined types
+
+## BOOST\_STATIC\_ASSERT ##
+
+Static assertions like the ones you've seen here are becoming as common in C++ as their runtime companion assert. This is, at least in part, due to the "metaprogramming revolution," where much of a program's computation is performed at compile time. The only way to express compile time assertions is by having the compiler issue an error. To make the assertions usable, the error messages must convey the necessary information, but that's hard to do portably. This is what `BOOST_STATIC_ASSERT` does, by providing consistent output for compile time assertions on a wide range of compilers. It can be used at namespace, class, and function, scope.
+
+Use `BOOST_STATIC_ASSERT` when:
+  * A condition can be expressed at compile time
+  * Requirements on types are expressible at compile time
+  * You need to assert a relation of two or more constant integral values
+
+## checked\_delete ##
+
+When a dynamically allocated object is deleted, it is imperative that its destructor is called. If the type is incomplete that is, it has been declared but not defined the destructor will probably never be called. This is a potentially disastrous situation, so avoiding it is paramount. For class templates and functions, the risk is greater than for other types, because there's no telling in advance which types will be used with it. When using `checked_delete` and `checked_array_delete`, the problem of deleting incomplete types is removed. There is no runtime overhead compared to a direct call to delete, so the extra safety brought forth by `checked_delete` comes virtually without a price.
+
+Use `checked_delete` when you need to ensure that types are complete when calling delete.
+
+## noncopyable ##
+
+There are many types for which we need to prohibit copying and copy assignment. However, declaring the copy constructor and copy assignment operator private is often neglected for such types, and responsibility for knowing that copying doesn't make sense is transferred to clients of the type. Even when types ensure that they cannot be copied or assigned, using private copy constructors and copy assignment operators, it isn't always clear to the client that this is the case. Of course, the compiler kindly informs those who try, but it may not be apparent where the error is coming from. Either way, the best we can do is to be explicit about it, and deriving from noncopyable makes a clear statement. It is immediately in view when scanning the declaration of the type. When compiling, an error message almost certainly includes the name noncopyable. And it also saves some typing, which is a killer argument for some.
+
+Use noncopyable when:
+  * Copying and copy assignment of types is not allowed
+  * Prohibition of copying and assignment should be as explicit as possible
+
+## addressof ##
+
+There are not many potent arguments for overloading operator&, but because it is possible, some people do it anyway. When writing code that relies on retrieving the actual address of objects, addressof can help by ensuring that the real address is returned. When writing generic code, there is no way of telling which types will be operated upon, so if the address of parameterized types needs to be taken, use addressof.
+
+Use addressof when you must retrieve the actual address of an object, regardless of the semantics for operator&.
+
+## enable\_if ##
+
+The C++ language feature known as SFINAE is important. Without it, a lot of new code would break existing code, and some types of function overloads (and template specializations) would simply not be possible. To directly make use of SFINAE in a controlled way to enable or disable certain functions or types for overload resolution is complicated. It also makes for hard-to-read code. Using `boost::enable_if` is an elegant way of simultaneously stating that an overload is only eligible when certain conditions apply. The same argument holds for disable\_if, which is used to state the opposite that an overload is not applicable if the condition holds true. There is promise of even more practical uses of SFINAE, and this library also serves as a very nice introduction of the topic. The lazy versions, `lazy_enable_if` and `lazy_disable_if` are used to avoid instantiating types that may not be available (depending on the valueof the condition).
+
+Use `enable_if` when:
+  * You need to add or remove a function to the overload set depending on some condition
+  * You need to add or remove a class template specialization from the set of specializations depending on some condition
+
+## Regex ##
+
+Boost.Regex is a powerful library so it has not been possible to cover all of it in this chapter. Similarly, the great expressiveness and range of application of regular expressions necessarily means that this chapter offers little more than an introduction to them. These topics could easily fill a separate book. To learn more, study the online documentation for Boost.Regex and pick up a book on regular expressions (consult the
+Bibliography for suggestions). Despite the power of Boost.Regex, and the breadth and depth of regular expressions, even complete neophytes can use regular expressions effectively with this library. For programmers who have selected other programming languages due to C++'s lack of support for regular expressions, welcome home.
+
+Boost.Regex is not the only regular expression library available for C++ programmers, but it is certainly one of the best. It's easy to use and fast as lightning when matching your regular expressions. Use it as often as you can.
+
+## Any ##
+
+Discriminated types can contain values of different types and are quite different from indiscriminate (read `void*`) types. We always depend heavily on type safety in C++, and there are few situations in which we are willing to do without it.
+
+This is for good reasons: Type safety keeps us from making mistakes and improves the performance of our code. So, we avoid indiscriminate types. Still, it is not uncommon to find oneself in need of heterogeneous storage, or to insulate clients from the details of types, or to gain the utmost flexibility at lower levels of a hierarchy. any provides this functionality while maintaining full type safety, and that makes it an excellent
+addition to our toolbox!
+
+Use the Any library when
+  * You need to store values of heterogeneous types in containers
+  * Storage for unknown types is required
+  * Types are being passed through layers that need not know anything about the types
+
+## Variant ##
+
+The fact that discriminated unions are useful in everyday programming should come as no surprise, and the Boost.Variant library does an excellent job of providing efficient and easy-to-use variant types based upon discriminated unions. Because C++ unions aren't terribly useful for many types (they support only built-in types and POD types), the need for something else has been prevalent for a long time. Many attempts at creating discriminated unions have suffered from significant drawbacks. For example, previous attempts usually come with a fixed set of supported types, which seriously impedes maintainability and flexibility.
+
+Boost.Variant avoids this limitation through templates, which theoretically allows creating any variant type. Type-switching code has always been a problem when dealing with discriminated unions; it was necessary to test for the type of the current value before acting, creating maintenance headaches. Boost.Variant offers straightforward value extraction and typesafe visitation, which is a novel approach that elegantly solves that problem. Finally, efficiency has often been a concern with previous attempts, but this
+library addresses that too, by using stack-based storage rather than the heap.
+
+## Tuple ##
+
+The Tuple library brings the concept of tuples to C++. It is intuitive and concise, and although its primary use seems to be for multiple return value from functions, it is also very useful for creating all sorts of logical groupings such as storing sets of elements (as elements) in Standard Library containers. The alternative for achieving the same level of coherency is to create unique structs for every different return type (groupings), which is not only tedious work, it also removes the possibility of generic solutions for recurring tasks. These problems are alleviated with the use of the Boost.Tuple.
+
+## Bind ##
+
+Use Bind when
+  * You need to bind a call to a free function, and some or all of its arguments
+  * You need to bind a call to a member function, and some or all of its arguments
+  * You need to compose nested function objects
+The existence of a generalized binder is a tremendously useful tool when it comes to writing terse, coherent code. It reduces the number of small function objects created for adapting functions/function objects, and combinations of functions. Although the Standard Library already offers a small part of the functionality found in Boost.Bind, there are significant improvements that make Boost.Bind the better choice in most places. In addition to the simplification of existing features, Bind also offers powerful functional composition features, which provide the programmer with great power without negative effects on maintenance. If you've taken the time to learn about bind1st, bind2nd, ptr\_fun, mem\_fun\_ref, and so forth, you'll have little or no trouble transitioning to Boost.Bind. If you've yet to start using the current binder offerings from the
+C++ Standard Library, I strongly suggest that you start by using Bind, because it is both easier to learn and more powerful.
+
+## Lambda ##
+
+Use Lambda when
+  * You would otherwise create a simple function object
+  * You need to tweak argument order or arity for function calls
+  * You want to create standard-conforming function objects on-the-fly
+  * You need flexible and readable predicates
+
+## Function ##
+
+Use Function when
+  * You need to store a callback function, or function object.
+  * You want to decouple function calls from the implementation, for example between the GUI and the implementation
+  * You want to store function objects created by binder libraries to be invoked at a later time, or multiple times
+
+Boost.Function is an important addition to the offerings from the Standard Library. The well-known technique of using function pointers as a callback mechanism is extended to include anything that behaves like a function, including function objects created by binder libraries. Through the use of Boost.Function, it is easy to add state to the callbacks, and to adapt existing classes and member functions to be used as callback functions.
+
+There are several advantages to using Boost.Function rather than function pointers: relaxed requirements on the signature through compatible function objects rather than exact signatures; the possibility to use binders, such as Boost.Bind and Boost.Lambda; the ability to test whether functions are empty that is, that there is no target before attempting to invoke them; and the notion of stateful objects rather than just stateless functions. Each of these advantages favor using Boost.Function over the C-style callbacks that have been prevalent in solving this type of problem. Only when the small additional cost of using Boost.Function compared to function pointers is prohibitive should the function pointer technique be considered.
+
+## Signals ##
+
+Use Signals when
+  * You need robust callbacks
+  * There can be multiple handlers of events
+  * The connection between the signal and the connected slots should be configurable at runtime
+
+That Boost.Signals supersedes old-style callbacks should be blatantly clear by now, and this library is one of the best signals and slots implementations available. The design pattern that the library captures is well known and has been studied for a long time, so the domain is mature. Some programming languages already have such mechanisms available directly in the language, for example, delegates and events in .NET. In C++, the problem is elegantly solved with libraries. Signals and slots are used to separate the trigger mechanism of an event from the code that handles it. This separation decouples subsystems and makes them more comprehensible. It also solves the problem of updating multiple interested parties when important events take place. There are numerous places in a typical program or library where signals and slots are useful. Whether you are writing a GUI framework or an intrusion detection system for a power plant, Signals is ready to take
+care of all your signalling needs. It is easy to learn how to use, yet it also offers the advanced functionality that is required for complex tasks. For example, custom Combiners make it possible to write event mechanisms that are tailor-made for a certain domain.
